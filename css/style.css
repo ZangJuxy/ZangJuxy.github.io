@@ -179,6 +179,9 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   background-size: cover;
   transition: all 0.3s;
 }
+.reveal {
+  visibility: hidden;
+}
 #l_main {
   width: 70%;
   margin: 0 auto;
@@ -832,6 +835,9 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   }
   .header #he-plugin-simple {
     margin-right: 0;
+  }
+  .header .blog-title {
+    margin-left: 150px;
   }
 }
 @media (max-width: 551px) {
@@ -2199,7 +2205,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   box-sizing: border-box;
   transition: all 0.3s;
   position: relative;
-  background: url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png");
+  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/7AF0C9EC92F1DF25431440DB841B5637.jpg");
 }
 .motto .motto-title {
   text-align: center;
