@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>常用基本命令 | Hexo</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css" rel="stylesheet">
+
+  
+    <script>
+        var themeModelId = '';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script>
+        var live2dOpen = eval('true') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
+  
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  
+  <!-- 依赖于jquery和vue -->
+  <script src="/js/jquery3.5.1.js"></script>
+  <script src="/js/vue2.6.11.js"></script>
+  
+  <body>
+    <!-- 预加载动画 -->
+    <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">loading...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+  
+</script>
+
+    
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 头部导航等 -->
+    
+<header class="header " id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">Hexo</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+        </div>
+      
+      <a href="/" class="logo">Hexo</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="Please enter keywords"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+
+    <!-- 当头部导航设置为背景透明的时候  -->
+    
+      <script src="/js/header/index.js" data-pjax></script>
+    
+</header>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (href, before, media, attributes) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+
+  <script src="/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+    <!-- 内容区域 -->
+    <div id="safearea">
+      <main class="main" id="pjax-container" style="margin-top: 0;">
+        
+ <!-- prismjs 代码高亮 -->
+ 
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/15.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        常用基本命令
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2021-10-24 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> category：
+          
+            <a href="/categories/Linux/" class="post-detail-header_category">
+              Linux
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h2 id="目录管理"><a href="#目录管理" class="headerlink" title="目录管理"></a>目录管理</h2><blockquote>
+<p>绝对路径和相对路径</p>
+</blockquote>
+<p>我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。 </p>
+<p>其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。 </p>
+<p>绝对路径： 路径的写法，由根目录 / 写起，例如： /usr/share/doc 这个目录。 </p>
+<p>相对路径： 路径的写法，不是由 / 写起，例如由 /usr/share/doc 要到 /usr/share/man 底下时，可以写成： cd ../man 这就是相对路径的写法</p>
+<blockquote>
+<p>处理目录的常用命令</p>
+</blockquote>
+<p>接下来我们看几个常见的 处理目录的命令</p>
+<ul>
+<li>ls：列出目录</li>
+<li>cd：切换目录</li>
+<li>pwd：显示当前的目录</li>
+<li>mkdir：创建一个新的目录</li>
+<li>rmdir：删除一个空的目录</li>
+<li>cp：复制文件或目录</li>
+<li>rm：移动文件或目录</li>
+<li>mv：移动文件与目录，或修改文件与目录的名称</li>
+</ul>
+<blockquote>
+<p>ls(列出目录)</p>
+</blockquote>
+<p>在Linux系统当中， ls 命令可能是最常被运行的。</p>
+<p>语法：</p>
+<p><code>[root@www ~]# ls [-aAdfFhilnrRSt] 目录名称</code></p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024084810567.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024084810567.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024084810567"></p>
+<p>选项与参数：</p>
+<ul>
+<li>-a：全部的文件连同隐藏文件(开头为.的文件)一起列出来(常用)</li>
+<li>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</li>
+</ul>
+<p>将目录下的所有文件列出来(含属性与隐藏档)</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024085046344.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024085046344.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024085046344"></p>
+<blockquote>
+<p>cd (切换目录)</p>
+</blockquote>
+<p>cd是Change Directory的缩写，这是用来变换工作目录的命令。</p>
+<p>语法：</p>
+<p><code>cd [相对或者绝对路径]</code></p>
+<p>测试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换的用户目录下</span></span><br><span class="line">[root@zangzang /]<span class="comment"># cd home</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#使用 mkdir 命令创建 zangzang 目录</span></span><br><span class="line">[root@zangzang home]<span class="comment"># mkdir zangzang</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#进入 zangzang 目录</span></span><br><span class="line">[root@zangzang home]<span class="comment"># cd zangzang</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#回到上一级</span></span><br><span class="line">[root@zangzang zangzang]<span class="comment"># cd ..</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#回到根目录</span></span><br><span class="line">[root@zangzang home]<span class="comment"># cd /</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#表示回到自己的家目录，亦即是 /root 这个目录</span></span><br><span class="line">[root@zangzang /]<span class="comment"># cd ~</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>pwd(显示目前所在的目录)</p>
+</blockquote>
+<p>pwd 是<em>Print Working Directory</em> 的缩写，也就是显示目前所在目录的命令.</p>
+<p>选项与参数： <strong>-P</strong> ：显示出确实的路径，而非使用连结 (link) 路径。</p>
+<p>测试:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单纯显示出目前的工作目录</span></span><br><span class="line">[root@zangzang home]<span class="comment"># pwd</span></span><br><span class="line">/home</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果是链接要显示真实地址，可以使用 -p参数</span></span><br><span class="line">[root@zangzang /]<span class="comment"># cd bin</span></span><br><span class="line">[root@zangzang bin]<span class="comment"># pwd -P</span></span><br><span class="line">/usr/bin</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>mkdir (创建新目录)</p>
+</blockquote>
+<p>如果想要创建新的目录的话，那么就使用mkdir</p>
+<p>语法：</p>
+<p><code> mkdir [-mp] 目录名录</code></p>
+<p>选项与参数：</p>
+<ul>
+<li>-m: 配置文件的权限！</li>
+<li>-p:  帮助你直接将所需要的目录(包含上一节目录)递归创建起来!</li>
+</ul>
+<p>测试:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入我们的用户目录下</span></span><br><span class="line">[root@zangzang ~]<span class="comment"># cd /home</span></span><br><span class="line"><span class="comment"># 创建一个test文件夹</span></span><br><span class="line">[root@zangzang home]<span class="comment"># mkdir test</span></span><br><span class="line"><span class="comment"># 创建多层级目录</span></span><br><span class="line">[root@zangzang home]<span class="comment"># mkdir test/test1/test2/test3</span></span><br><span class="line">mkdir: cannot create directory ‘<span class="built_in">test</span>/test1/test2/test3’: No such file or directory <span class="comment"># &lt;== 没办法直接创建此目录</span></span><br><span class="line"><span class="comment"># 加了这个-p的选项，可以自行帮你创建多层目录！</span></span><br><span class="line">[root@zangzang home]<span class="comment"># mkdir -p test/test1/test2/test3</span></span><br><span class="line">[root@zangzang home]<span class="comment"># cd  test/test1/test2/test3</span></span><br><span class="line">[root@zangzang test3]<span class="comment"># pwd -P</span></span><br><span class="line">/home/<span class="built_in">test</span>/test1/test2/test3</span><br><span class="line"><span class="comment"># 创建权限为 rwx--x--x 的目录。</span></span><br><span class="line">[root@zangzang home]<span class="comment"># mkdir -m 711 test1</span></span><br><span class="line">[root@zangzang home]<span class="comment"># ls -ll</span></span><br><span class="line">total 28</span><br><span class="line">drwx------ 3 admin      admin      4096 Oct 21 19:03 admin</span><br><span class="line">drwx------ 3 springboot springboot 4096 Oct 21 20:14 springboot</span><br><span class="line">drwxr-x--- 9 root       root       4096 Aug 24  2017 staragent</span><br><span class="line">drwxr-xr-x 3 root       root       4096 Oct 24 09:29 <span class="built_in">test</span></span><br><span class="line">drwx--x--x 2 root       root       4096 Oct 24 09:34 test1</span><br><span class="line">drwxr-x--- 5 www        www        4096 Oct 21 20:13 www</span><br><span class="line">drwxr-xr-x 2 root       root       4096 Oct 24 09:06 zangzang</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>rmdir(删除空的目录)</p>
+</blockquote>
+<p>语法：</p>
+<p><code>rmdir [-p] 目录名称</code></p>
+<p><strong>选项与参数：-p ：连同上一级『空的』目录也一起删除</strong></p>
+<p>测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可以直接删除掉，没问题</span></span><br><span class="line">[root@zangzang home]<span class="comment"># rmdir test1</span></span><br><span class="line"><span class="comment"># 因为尚有内容，所以无法删除！</span></span><br><span class="line">[root@zangzang home]<span class="comment"># rmdir test</span></span><br><span class="line">rmdir: failed to remove ‘<span class="built_in">test</span>’: Directory not empty</span><br><span class="line"><span class="comment"># 利用 -p 这个选项，立刻就可以将test/test1/test2/test3 依次删除</span></span><br><span class="line">[root@zangzang home]<span class="comment"># rmdir -p test/test1/test2/test3</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：这个 rmdir 仅能删除空的目录，可以使用 rm 命令来删除非空目录，后面会说!</p>
+<blockquote>
+<p>cp(复制文件或目录)</p>
+</blockquote>
+<p>语法：</p>
+<p><code>[root@www ~]# cp [-adfilprsu] 来源档(source) 目标档(destination) </code></p>
+<p><code>[root@www ~]# cp [options] source1 source2 source3 .... directory</code></p>
+<p>选项与参数： </p>
+<ul>
+<li>-a：相当於 -pdr 的意思，至於 pdr 请参考下列说明；(常用) </li>
+<li>-p：连同文件的属性一起复制过去，而非使用默认属性(备份常用)；</li>
+<li> -d：若来源档为连结档的属性(link file)，则复制连结档属性而非文件本身； </li>
+<li>-r：递归持续复制，用於目录的复制行为；(常用) </li>
+<li>-f：为强制(force)的意思，若目标文件已经存在且无法开启，则移除后再尝试一次； </li>
+<li>-i：若目标档(destination)已经存在时，在覆盖时会先询问动作的进行(常用) </li>
+<li>-l：进行硬式连结(hard link)的连结档创建，而非复制文件本身。 </li>
+<li>-s：复制成为符号连结档 (symbolic link)，亦即『捷径』文件； </li>
+<li>-u：若 destination 比 source 旧才升级 destination ！</li>
+</ul>
+<p>测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 找到一个有文件的目录，我们这里找root目录</span></span><br><span class="line">[root@zangzang home]<span class="comment"># cd /root</span></span><br><span class="line">[root@zangzang ~]<span class="comment"># ls</span></span><br><span class="line">env.txt  sa_recovery.log</span><br><span class="line">[root@zangzang ~]<span class="comment"># cd /home</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制root目录下的env.txt到 home 下</span></span><br><span class="line">[root@zangzang home]<span class="comment"># cp /root/env.txt /home</span></span><br><span class="line">[root@zangzang home]<span class="comment"># ls</span></span><br><span class="line">admin  env.txt  springboot  staragent  www  zangzang</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>rm(移除文件或目录)</p>
+</blockquote>
+<p>语法：</p>
+<p><code>rm [-fir] 文件或目录</code></p>
+<p>选项与参数：</p>
+<ul>
+<li>-f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息； </li>
+<li>-i ：互动模式，在删除前会询问使用者是否动作 </li>
+<li>-r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将刚刚在 cp 的实例中创建的 install.sh删除掉！</span></span><br><span class="line">[root@zangzang ~]<span class="comment"># cd /home</span></span><br><span class="line">[root@zangzang home]<span class="comment"># ls</span></span><br><span class="line">admin  env.txt  springboot  staragent  www  zangzang</span><br><span class="line">[root@zangzang home]<span class="comment"># rm -ri env.txt</span></span><br><span class="line">rm: remove regular file ‘env.txt’? y</span><br><span class="line">[root@zangzang home]<span class="comment"># ls</span></span><br><span class="line">admin  springboot  staragent  www  zangzang</span><br><span class="line"><span class="comment"># 如果加上 -i 的选项就会主动询问喔，避免你删除到错误的档名！</span></span><br><span class="line"><span class="comment"># 尽量不要在服务器上使用 rm -rf /</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>mv(移动文件与目录，或修改名称)</p>
+</blockquote>
+<p>语法：</p>
+<p><code>[root@www ~]# mv [-fiu] source destination </code></p>
+<p><code>[root@www ~]# mv [options] source1 source2 source3 .... directory</code></p>
+<p>选项与参数：</p>
+<ul>
+<li>-f ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖； </li>
+<li>-i ：若目标文件 (destination) 已经存在时，就会询问是否覆盖！ </li>
+<li>-u ：若目标文件已经存在，且 source 比较新，才会升级 (update)</li>
+</ul>
+<p>测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制一个文件到当前目录</span></span><br><span class="line">[root@kuangshen home]<span class="comment"># cp /root/install.sh /home</span></span><br><span class="line"><span class="comment"># 创建一个文件夹 test</span></span><br><span class="line">[root@kuangshen home]<span class="comment"># mkdir test</span></span><br><span class="line"><span class="comment"># 将复制过来的文件移动到我们创建的目录并查看</span></span><br><span class="line">[root@zangzang home]<span class="comment"># mv env.txt test</span></span><br><span class="line">[root@zangzang home]<span class="comment"># cd test</span></span><br><span class="line">[root@zangzang <span class="built_in">test</span>]<span class="comment"># ls</span></span><br><span class="line">env.txt</span><br><span class="line">[root@zangzang <span class="built_in">test</span>]<span class="comment"># </span></span><br><span class="line"><span class="comment"># 将文件重命名，然后在查看!</span></span><br><span class="line">[root@zangzang <span class="built_in">test</span>]<span class="comment"># cd ..</span></span><br><span class="line">[root@zangzang home]<span class="comment"># mv test mvtest</span></span><br><span class="line">[root@zangzang home]<span class="comment"># ls</span></span><br><span class="line">admin  mvtest  springboot  staragent  www  zangzang</span><br><span class="line">[root@zangzang home]<span class="comment"># </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="基本属性"><a href="#基本属性" class="headerlink" title="基本属性"></a>基本属性</h2><blockquote>
+<p>看懂文件属性</p>
+</blockquote>
+<p>Linux系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。为了保护系统的安 全性，Linux系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。 </p>
+<p>在Linux中我们可以使用 <code>ll</code> 或者<code> ls –l</code> 命令来显示一个文件的属性以及文件所属的用户和组， 如：</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024121703250.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024121703250.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024121703250"></p>
+<p>实例中，boot文件的第一个属性用”d”表示。”d”在Linux中代表该文件是一个目录文件。 </p>
+<p>在Linux中第一个字符代表这个文件是目录、文件或链接文件等等： </p>
+<ul>
+<li><p>当为[ d ]则是目录 当为[ - ]则是文件； </p>
+</li>
+<li><p>若是[ l ]则表示为链接文档 ( link file )； </p>
+</li>
+<li><p>若是[ b ]则表示为装置文件里面的可供储存的接口设备 ( 可随机存取装置 )； </p>
+</li>
+<li><p>若是[ c ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标 ( 一次性读取装置 )。 </p>
+<p>接下来的字符中，以三个为一组，且均为『rwx』 的三个参数的组合。 </p>
+<p>其中，[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。 </p>
+<p>要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现减号[ - ]而已。</p>
+</li>
+</ul>
+<p>每个文件的属性由左边第一部分的10个字符来确定（如下图）：</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024122522416.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024122522416.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024122522416"></p>
+<p>从左至右用0-9这些数字来表示。 </p>
+<p>第0位确定文件类型，第1-3位确定属主（该文件的所有者）拥有该文件的权限。第4-6位确定属组（所有 者的同组用户）拥有该文件的权限，第7-9位确定其他用户拥有该文件的权限。 </p>
+<p>其中： 第1、4、7位表示读权限，如果用”r”字符表示，则有读权限，如果用”-“字符表示，则没有读权限； </p>
+<p>第2、5、8位表示写权限，如果用”w”字符表示，则有写权限，如果用”-“字符表示没有写权限； </p>
+<p>第3、6、9位表示可执行权限，如果用”x”字符表示，则有执行权限，如果用”-“字符表示，则没有执行权 限。 </p>
+<p>对于文件来说，它都有一个特定的所有者，也就是对该文件具有所有权的用户。 </p>
+<p>同时，在Linux系统中，用户是按组分类的，一个用户属于一个或多个组。 文件所有者以外的用户又可以分为文件所有者的同组用户和其他用户。 因此，Linux系统按文件所有者、文件所有者同组用户和其他用户来规定了不同的文件访问权限。 在以上实例中，boot 文件是一个目录文件，属主和属组都为 root。</p>
+<blockquote>
+<p>修改文件属性</p>
+</blockquote>
+<p><strong>1、chgrp:更改文件属组</strong></p>
+<p><code>chgrp [-R] 属组名 文件名</code></p>
+<p>-R：递归更改文件属组，就是在更改某个目录文件的属组时，如果加上-R的参数，那么该目录下的所有 文件的属组都会更改。</p>
+<p><strong>2、chown:更改文件属主，也可以同时更改文件属组</strong></p>
+<p><code>chown [–R] 属主名 文件名 </code></p>
+<p><code>chown [-R] 属主名：属组名 文件名</code></p>
+<p><strong>3、chmod:更改文件9个属性</strong></p>
+<p><code>chmod [-R] xyz 文件或目录</code></p>
+<p>Linux文件属性有两种设置方法，一种是数字，一种是符号。</p>
+<p>Linux文件的基本权限就有九个，分别是owner/group/others三种身份各有自己的read/write/execute 权限。 </p>
+<p>先复习一下刚刚上面提到的数据：文件的权限字符为：『-rwxrwxrwx』， 这九个权限是三个三个一组 的！其中，我们可以使用数字来代表各个权限，各权限的分数对照表如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r:4 w:2 x:1</span><br></pre></td></tr></table></figure>
+
+<p>每种身份(owner/group/others)各自的三个权限(r/w/x)分数是需要累加的，例如当权限为： [-rwxrwx– -] 分数则是： </p>
+<ul>
+<li>owner = rwx = 4+2+1 = 7 </li>
+<li>group = rwx = 4+2+1 = 7 </li>
+<li>others= — = 0+0+0 = 0</li>
+</ul>
+<h2 id="文件内容查看"><a href="#文件内容查看" class="headerlink" title="文件内容查看"></a>文件内容查看</h2><blockquote>
+<p>概述</p>
+</blockquote>
+<p>Linux系统中使用一下命令来查看文件的内容:</p>
+<ul>
+<li>cat 由第一行开始显示文件内容 </li>
+<li>tac 从最后一行开始显示，可以看出 tac 是 cat 的倒著写！ </li>
+<li>nl 显示的时候，顺道输出行号！ </li>
+<li>more 一页一页的显示文件内容 less 与 more 类似，但是比 more 更好的是，他可以往前翻页！ </li>
+<li>head 只看头几行 </li>
+<li>tail 只看尾巴几行</li>
+</ul>
+<blockquote>
+<p>cat由第一行开始显示文件内容</p>
+</blockquote>
+<p>语法：</p>
+<p><code>cat [-AbEnTv]</code></p>
+<p>选项与参数： </p>
+<ul>
+<li>-A ：相当於 -vET 的整合选项，可列出一些特殊字符而不是空白而已； </li>
+<li>-b ：列出行号，仅针对非空白行做行号显示，空白行不标行号！ </li>
+<li>-E ：将结尾的断行字节 $ 显示出来； </li>
+<li>-n ：列印出行号，连同空白行也会有行号，与 -b 的选项不同； </li>
+<li>-T ：将 [tab] 按键以 ^I 显示出来； </li>
+<li>-v ：列出一些看不出来的特殊字符</li>
+</ul>
+<p>测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看网络配置: 文件地址 /etc/sysconfig/network-scripts/</span></span><br><span class="line">[root@zangzang /]<span class="comment"># cat /etc/sysconfig/network-scripts/ifcfg-eth0</span></span><br><span class="line">DEVICE=eth0</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">ONBOOT=yes</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>tac</p>
+</blockquote>
+<p>tac与cat刚好相反,文件内容从最后一行开始显示，可以看出tac是cat 的倒着写！如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang /]<span class="comment"># tac /etc/sysconfig/network-scripts/ifcfg-eth0</span></span><br><span class="line">ONBOOT=yes</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">DEVICE=eth0</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>nl 显示行号</p>
+</blockquote>
+<p>语法：</p>
+<p><code>nl [-bnw] 文件</code></p>
+<p>选项与参数： </p>
+<ul>
+<li>-b ：指定行号指定的方式，主要有两种： </li>
+<li>-b a ：表示不论是否为空行，也同样列出行号(类似 cat -n)； </li>
+<li>-b t ：如果有空行，空的那一行不要列出行号(默认值)； </li>
+<li>-n ：列出行号表示的方法，主要有三种： </li>
+<li>-n ln ：行号在荧幕的最左方显示； </li>
+<li>-n rn ：行号在自己栏位的最右方显示，且不加 0 ； </li>
+<li>-n rz ：行号在自己栏位的最右方显示，且加 0 ； </li>
+<li>-w ：行号栏位的占用的位数。</li>
+</ul>
+<p>测试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang /]<span class="comment"># nl /etc/sysconfig/network-scripts/ifcfg-eth0</span></span><br><span class="line">     1	DEVICE=eth0</span><br><span class="line">     2	BOOTPROTO=dhcp</span><br><span class="line">     3	ONBOOT=yes</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>more 一页一页翻动</p>
+</blockquote>
+<p>在more这个程序的运行过程中，你有几个按键可以按：</p>
+<ul>
+<li>空白键 (space)：代表向下翻一页； </li>
+<li>Enter ：代表向下翻『一行』； </li>
+<li>/字串 ：代表在这个显示的内容当中，向下搜寻『字串』这个关键字； </li>
+<li>:f ：立刻显示出档名以及目前显示的行数； </li>
+<li>q ：代表立刻离开 more ，不再显示该文件内容。 </li>
+<li>b 或 [ctrl]-b ：代表往回翻页，不过这动作只对文件有用，对管线无用。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang etc]<span class="comment"># more /etc/csh.login</span></span><br><span class="line">....(中间省略)....</span><br><span class="line">--More--(28%) <span class="comment"># 重点在这一行喔！你的光标也会在这里等待你的命令</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>less 一页一页翻动，以下实例输出/etc/man.config文件的内容：</p>
+</blockquote>
+<p>less运行时可以输入的命令有：</p>
+<ul>
+<li>空白键 ：向下翻动一页； </li>
+<li>[pagedown]：向下翻动一页； </li>
+<li>[pageup] ：向上翻动一页； </li>
+<li>/字串 ：向下搜寻『字串』的功能； </li>
+<li>?字串 ：向上搜寻『字串』的功能； </li>
+<li>n ：重复前一个搜寻 (与 / 或 ? 有关！) </li>
+<li>N ：反向的重复前一个搜寻 (与 / 或 ? 有关！) </li>
+<li>q ：离开 less 这个程序；</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang etc]<span class="comment"># more /etc/csh.login</span></span><br><span class="line">....(中间省略)....</span><br><span class="line">: <span class="comment"># 这里可以等待你输入命令！</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>扩展： Linux链接概念</p>
+</blockquote>
+<p>Linux 链接分两种，一种被称为硬链接（Hard Link），另一种被称为符号链接（Symbolic Link）。 情况下，ln 命令产生硬链接。</p>
+<p><strong>硬连接</strong> </p>
+<p>硬连接指通过索引节点来进行连接。在 Linux 的文件系统中，保存在磁盘分区中的文件不管是什么类型 都给它分配一个编号，称为索引节点号(Inode Index)。在 Linux 中，多个文件名指向同一索引节点是存 在的。比如：A 是 B 的硬链接（A 和 B 都是文件名），则 A 的目录项中的 inode 节点号与 B 的目录项中 的 inode 节点号相同，即一个 inode 节点对应两个不同的文件名，两个文件名指向同一个文件，A 和 B 对文件系统来说是完全平等的。删除其中任何一个都不会影响另外一个的访问。 硬连接的作用是允许一个文件拥有多个有效路径名，这样用户就可以建立硬连接到重要文件，以防止“误 删”的功能。其原因如上所述，因为对应该目录的索引节点有一个以上的连接。只删除一个连接并不影响 索引节点本身和其它的连接，只有当最后一个连接被删除后，文件的数据块及目录的连接才会被释放。 也就是说，文件真正删除的条件是与之相关的所有硬连接文件均被删除。 </p>
+<p><strong>软连接</strong> </p>
+<p>另外一种连接称之为符号连接（Symbolic Link），也叫软连接。软链接文件有类似于 Windows 的快捷 方式。它实际上是一个特殊的文件。在符号连接中，文件实际上是一个文本文件，其中包含的有另一文 件的位置信息。比如：A 是 B 的软链接（A 和 B 都是文件名），A 的目录项中的 inode 节点号与 B 的目 录项中的 inode 节点号不相同，A 和 B 指向的是两个不同的 inode，继而指向两块不同的数据块。但是 A 的数据块中存放的只是 B 的路径名（可以根据这个找到 B 的目录项）。A 和 B 之间是“主从”关系，如 果 B 被删除了，A 仍然存在（因为两个是不同的文件），但指向的是一个无效的链接。</p>
+<p><strong>测试</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang /]<span class="comment"># cd home</span></span><br><span class="line">[root@zangzang home]<span class="comment"># touch f1 #创建一个测试文件f1</span></span><br><span class="line">[root@zangzang home]<span class="comment"># ls</span></span><br><span class="line">admin  f1  mvtest  springboot  staragent  www  zangzang</span><br><span class="line">[root@zangzang home]<span class="comment"># ln f1 f2 		#创建f1的一个硬链接文件f2</span></span><br><span class="line">[root@zangzang home]<span class="comment"># ln -s f1 f3	#创建f1的一个软链接文件f3</span></span><br><span class="line">[root@zangzang home]<span class="comment"># ls -li 		#-i参数显示文件的inode节点信息</span></span><br><span class="line">total 24</span><br><span class="line">393286 drwx------ 3 admin      admin      4096 Oct 21 19:03 admin</span><br><span class="line">395620 -rw-r--r-- 2 root       root          0 Oct 24 16:01 f1</span><br><span class="line">395620 -rw-r--r-- 2 root       root          0 Oct 24 16:01 f2</span><br><span class="line">396491 lrwxrwxrwx 1 root       root          2 Oct 24 16:02 f3 -&gt; f1</span><br><span class="line">525271 drwxr-xr-x 2 root       root       4096 Oct 24 11:40 mvtest</span><br><span class="line">525184 drwx------ 3 springboot springboot 4096 Oct 21 20:14 springboot</span><br><span class="line">393237 drwxr-x--- 9 root       root       4096 Aug 24  2017 staragent</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>从上面的结果中可以看出，硬连接文件 f2 与原文件 f1 的 inode 节点相同，均为 395620，然而符号连 接文件的 inode 节点不同。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang home]<span class="comment"># echo &quot;I am f1 file&quot; &gt;&gt;f1</span></span><br><span class="line">[root@zangzang home]<span class="comment"># cat f1</span></span><br><span class="line">I am f1 file</span><br><span class="line">[root@zangzang home]<span class="comment"># cat f2</span></span><br><span class="line">I am f1 file</span><br><span class="line">[root@zangzang home]<span class="comment"># cat f3</span></span><br><span class="line">I am f1 file</span><br><span class="line">[root@zangzang home]<span class="comment"># rm -rf f1</span></span><br><span class="line">[root@zangzang home]<span class="comment"># cat f2</span></span><br><span class="line">I am f1 file</span><br><span class="line">[root@zangzang home]<span class="comment"># cat f3</span></span><br><span class="line">cat: f3: No such file or directory</span><br><span class="line">[root@zangzang home]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
+
+<p>通过上面的测试可以看出：当删除原始文件 f1 后，硬连接 f2 不受影响，但是符号连接 f1 文件无效； 依此您可以做一些相关的测试，可以得到以下全部结论：</p>
+<ul>
+<li>删除符号连接f3,对f1,f2无影响； </li>
+<li>删除硬连接f2，对f1,f3也无影响； </li>
+<li>删除原文件f1，对硬连接f2没有影响，导致符号连接f3失效； </li>
+<li>同时删除原文件f1,硬连接f2，整个文件会真正的被删除。</li>
+</ul>
+<h2 id="Vim编辑器"><a href="#Vim编辑器" class="headerlink" title="Vim编辑器"></a>Vim编辑器</h2><blockquote>
+<p>什么是Vim编辑器</p>
+</blockquote>
+<p>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程 序员中被广泛使用。 </p>
+<p>简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。</p>
+<p> vim 则可以说是程序开发者的一项很好用的工具。 </p>
+<p>所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在。 </p>
+<p>连 vim 的官方网站 (<a target="_blank" rel="noopener" href="http://www.vim.org/">http://www.vim.org</a>) 自己也说 vim 是一个程序开发工具而不是文字处理软件。</p>
+<p>vim键盘图</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024161850217.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024161850217.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024161850217"></p>
+<blockquote>
+<p>三种使用模式</p>
+</blockquote>
+<p>基本上 vi/vim 共分为三种模式，分别是<strong>命令模式（Command mode）</strong>，<strong>输入模式（Insert mode）</strong>和 <strong>底线命令模式（Last line mode）</strong>。 这三种模式的作用分别是：</p>
+<p><code>命令模式</code></p>
+<p>用户刚刚启动 vi/vim，便进入了命令模式.</p>
+<p>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字 符，i被当作了一个命令。</p>
+<p>以下是常用的几个命令：</p>
+<ul>
+<li><strong>i</strong>切换到输入模式，以输入字符</li>
+<li><strong>x</strong> 删除当前光标所在处的字符</li>
+<li><strong>：</strong>切换到底线命令模式，以在最低一行输入命令</li>
+</ul>
+<p>若想要编辑文本：启动Vim，进入了命令模式，按下i，切换到输入模式。 </p>
+<p>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
+<p><code>输入模式</code></p>
+<p>在命令模式下按下i就进入了输入模式。 </p>
+<p>在输入模式中，可以使用以下按键：</p>
+<ul>
+<li>字符按键以及Shift组合，输入字符 </li>
+<li>ENTER，回车键，换行 </li>
+<li>BACK SPACE，退格键，删除光标前一个字符 </li>
+<li>DEL，删除键，删除光标后一个字符 </li>
+<li>方向键，在文本中移动光标 HOME/END，移动光标到行首/行尾 </li>
+<li>Page Up/Page Down，上/下翻页 </li>
+<li>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线 </li>
+<li>ESC，退出输入模式，切换到命令模式</li>
+</ul>
+<p><code>底线命令模式</code></p>
+<p>在命令模式下按下:（英文冒号）就进入了底线命令模式。 </p>
+<p>底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。</p>
+<p> 在底线命令模式中，基本的命令有（已经省略了冒号）： </p>
+<ul>
+<li><p>q 退出程序 </p>
+</li>
+<li><p>w 保存文件 </p>
+<p>按ESC键可随时退出底线命令模式。 </p>
+<p>简单的说，我们可以将这三个模式想成底下的图标来表示：</p>
+</li>
+</ul>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024162622981.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024162622981.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024162622981"></p>
+<blockquote>
+<p>上手体验一下</p>
+</blockquote>
+<p>如果你想要使用 vi 来建立一个名为 zangzang.txt 的文件时，你可以这样做：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang home]<span class="comment"># vim zangzang.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>然后会进入文件</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163124424.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163124424.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024163124424"></p>
+<p><strong>按下i进入输入模式,开始编辑文件</strong></p>
+<p>在编辑模式当中，你可以发现在左下角状态栏中会出现 –INSERT- 的字样，那就是可以输入任意字符的提 示。 </p>
+<p>这个时候，键盘上除了 Esc 这个按键之外，其他的按键都可以视作为一般的输入按钮了，所以你可以进 行任何的编辑。</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163307629.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163307629.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024163307629"></p>
+<p><strong>按下ESC按钮回到一般模式</strong></p>
+<p>好了，假设我已经按照上面的样式给他编辑完毕了，那么应该要如何退出呢？是的！没错！就是给他按 下 <strong>Esc</strong> 这个按钮即可！马上你就会发现画面左下角的 – INSERT – 不见了！ </p>
+<p>在一般模式中按下 :wq 储存后离开 vim！</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163516657.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163516657.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024163516657"></p>
+<p>OK! 这样我们就成功创建了一个 zangzang.txt 的文件。</p>
+<blockquote>
+<p>Vim按键说明</p>
+</blockquote>
+<p>除了上面简易范例的 i, Esc, :wq 之外，其实 vim 还有非常多的按键可以使用。</p>
+<p><code>第一部分：一般模式可用的光标移动、复制粘贴、搜索替换等</code></p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163722772.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163722772.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024163722772"></p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163738145.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163738145.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024163738145"></p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163839677.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163839677.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024163839677"></p>
+<p><code>第二部分：一般模式切换到编辑模式的可用按钮说明</code><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163957395.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024163957395.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024163957395"></p>
+<p><code>第三部分：一般模式切换到指令行模式的可用的按钮说明</code></p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024164053616.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211024164053616.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211024164053616"></p>
+<h2 id="账号管理"><a href="#账号管理" class="headerlink" title="账号管理"></a>账号管理</h2><blockquote>
+<p>简介</p>
+</blockquote>
+<p>Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管 理员申请一个账号，然后以这个账号的身份进入系统。 </p>
+<p>用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另 一方面也可以帮助用户组织文件，并为用户提供安全性保护。 </p>
+<p>每个用户账号都拥有一个唯一的用户名和各自的口令。 </p>
+<p>用户在登录时键入正确的用户名和口令后，就能够进入系统和自己的主目录。 </p>
+<p>实现用户账号的管理，要完成的工作主要有如下几个方面： </p>
+<ul>
+<li>用户账号的添加、删除与修改。 </li>
+<li>用户口令的管理。 </li>
+<li>用户组的管理。</li>
+</ul>
+<blockquote>
+<p>用户账号的管理</p>
+</blockquote>
+<p>用户账号的管理工作主要涉及到用户账号的添加、修改和删除。 </p>
+<p>添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等 资源。</p>
+<blockquote>
+<p>添加账号useradd</p>
+</blockquote>
+<p>语法：</p>
+<p><code>useradd 选项 用户名</code></p>
+<p>参数说明：</p>
+<ul>
+<li>选项:<ul>
+<li>-c comment 指定一段注释性描述。 </li>
+<li>-d 目录 指定用户主目录，如果此目录不存在，则同时使用-m选项，可以创建主目录。 </li>
+<li>-g 用户组 指定用户所属的用户组。 </li>
+<li>-G 用户组，用户组 指定用户所属的附加组。 </li>
+<li>-m 使用者目录如不存在则自动建立。 </li>
+<li>-s Shell文件 指定用户的登录Shell。 </li>
+<li>-u 用户号 指定用户的用户号，如果同时有-o选项，则可以重复使用其他用户的标识号。</li>
+</ul>
+</li>
+<li>用户名:<ul>
+<li>指定新账号的登录名</li>
+</ul>
+</li>
+</ul>
+<p>测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此命令创建了一个用户zangzanga，其中-m选项用来为登录名zangzang产生一个主目录/home/zangzanga</span></span><br><span class="line">[root@zangzang /]<span class="comment"># useradd -m zangzanga</span></span><br></pre></td></tr></table></figure>
+
+<p>增加用户账号就是在/etc/passwd文件中为新用户增加一条记录，同时更新其他系统文件如/etc/shadow, /etc/group等。</p>
+<blockquote>
+<p>删除账号</p>
+</blockquote>
+<p>如果一个用户的账号不再使用，可以从系统中删除。 </p>
+<p>删除用户账号就是要将/etc/passwd等系统文件中的该用户记录删除，必要时还删除用户的主目录。 </p>
+<p>删除一个已有的用户账号使用 userdel 命令，其格式如下：</p>
+<p>语法：</p>
+<p><code>userdel 选项 用户名</code></p>
+<p>常用的选项是 -r 他的作用是把用户的主目录一起删除.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang ~]<span class="comment"># userdel -r zangzanga</span></span><br></pre></td></tr></table></figure>
+
+<p>此命令删除用户zangzanga在系统文件中（主要是/etc/passwd, /etc/shadow, /etc/group等）的记录， 同时删除用户的主目录。</p>
+<blockquote>
+<p>修改账号</p>
+</blockquote>
+<p>修改用户账号就是根据实际情况更改用户的有关属性，如用户号、主目录、用户组、登录Shell等。 修改已有用户的信息使用 usermod 命令，其格式如下：</p>
+<p><code>usermod 选项 用户名</code></p>
+<p>常用的选项包括 ==-c, -d, -m, -g, -G, -s, -u==以及-o等 ，这些选项的意义与 ==useradd== 命令中的选项 一样，可以为用户指定新的资源值。</p>
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># usermod -s /bin/ksh -d /home/z –g developer sam</span></span><br></pre></td></tr></table></figure>
+
+<p>此命令将用户sam的登录Shell修改为ksh，主目录改为/home/z，用户组改为developer。</p>
+<blockquote>
+<p>用户口令的管理</p>
+</blockquote>
+<p>用户管理的一项重要内容是用户口令的管理。用户账号刚创建时没有口令，但是被系统锁定，无法使 用，必须为其指定口令后才可以使用，即使是指定空口令。 </p>
+<p>指定和修改用户口令的Shell命令是 ==passwd== 。超级用户可以为自己和其他用户指定口令，普通用户只 能用它修改自己的口令。 </p>
+<p>命令的格式为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd 选项 用户名</span><br></pre></td></tr></table></figure>
+
+<p>可使用的选项： </p>
+<ul>
+<li>-l 锁定口令，即禁用账号。 </li>
+<li>-u 口令解锁。 </li>
+<li>-d 使账号无口令。 </li>
+<li>-f 强迫用户下次登录时修改口令。</li>
+</ul>
+<p>如果默认用户名，则修改当前用户的口令。</p>
+<p>例如，假设当前用户是sam，则下面的命令修改该用户自己的口令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ passwd</span><br><span class="line">Old password:******</span><br><span class="line">New password:*******</span><br><span class="line">Re-enter new password:*******</span><br></pre></td></tr></table></figure>
+
+<p>如果是超级用户，可以用下列形式指定任何用户的口令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># passwd sam</span></span><br><span class="line">New password:*******</span><br><span class="line">Re-enter new password:*******</span><br></pre></td></tr></table></figure>
+
+<p>普通用户修改自己的口令时，passwd命令会先询问原口令，验证后再要求用户输入两遍新口令，如果两 次输入的口令一致，则将这个口令指定给用户；而超级用户为用户指定口令时，就不需要知道原口令。 </p>
+<p>为了系统安全起见，用户应该选择比较复杂的口令，例如最好使用8位长的口令，口令中包含有大写、小 写字母和数字，并且应该与姓名、生日等不相同。 </p>
+<p>为用户指定空口令时，执行下列形式的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># passwd -d sam</span></span><br></pre></td></tr></table></figure>
+
+<p>此命令将用户 sam 的口令删除，这样用户 sam 下一次登录时，系统就不再允许该用户登录了。 passwd 命令还可以用 -l(lock) 选项锁定某一用户，使其不能登录，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># passwd -l sam</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><p>每个用户都有一个用户组，系统可以对一个用户组中的所有用户进行集中管理。不同Linux 系统对用户 组的规定有所不同，如Linux下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建。</p>
+<p>用户组的管理涉及用户组的添加、删除和修改。组的增加、删除和修改实际上就是对/etc/group文件的 更新。</p>
+<blockquote>
+<p>新增一个新的用户组使用groupadd命令</p>
+</blockquote>
+<p><code>groupadd 选项 用户</code></p>
+<p>可以使用的选项有：</p>
+<ul>
+<li>-g GID 指定新用户组的组标识好(GID)</li>
+<li>-o 一般与-g选项同时使用，表示新用户组的GID可以与系统已有用户组的GID相同</li>
+</ul>
+<p>实例1：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang /]<span class="comment"># groupadd zangone</span></span><br></pre></td></tr></table></figure>
+
+<p>此命令向系统增加了一个新组zangone，新的组标识号是在当前已有的最大组标识号的基础上＋1.</p>
+<p>实例2：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang ~]<span class="comment"># groupadd -g 101 grouptwo</span></span><br></pre></td></tr></table></figure>
+
+<p>此命令向系统中增加了一个新组grouptwo，同时指定组的标识号是101.</p>
+<blockquote>
+<p>如果要删除一个已有的用户组，使用groupdel命令</p>
+</blockquote>
+<p>语法：</p>
+<p><code>groupdel 用户组</code></p>
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang ~]<span class="comment"># groupdel zangone</span></span><br></pre></td></tr></table></figure>
+
+<p>此命令从系统中删除zangone组</p>
+<blockquote>
+<p>修改用户组的属性使用groupmod命令</p>
+</blockquote>
+<p>语法：</p>
+<p><code>groupmod 选项 用户组</code></p>
+<p>常用的选项有：</p>
+<ul>
+<li>-g GID 为用户组指定新的组标识号。 </li>
+<li>-o 与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。 </li>
+<li>-n新用户组 将用户组的名字改为新名字</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此命令将用户组grouptwo的组标识符号修改为102</span></span><br><span class="line">[root@zangzang ~]<span class="comment"># groupmod -g 102 grouptwo</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将组grouptwo的标识符号改为1000，组名修改为groupthree</span></span><br><span class="line">[root@zangzang ~]<span class="comment"># groupmod -g 10000 -n groupthree grouptwo</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>切换组</p>
+</blockquote>
+<p>如果一个用户属于多个组，那么用户可以在用户组之间切换，以便有其他用户组的权限。</p>
+<p>用户可以在登录后，使用命令newgrp切换到其他用户组，这个命令的参数就是目的的用户组。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ newgrp root</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>/etc/passwd</p>
+</blockquote>
+<p>完成用户管理的工作有许多种方法，但是每一种方法实际上都是对有关的系统文件进行修改。 </p>
+<p>与用户和用户组相关的信息都存放在一些系统文件中，这些文件包括/etc/passwd, /etc/shadow, /etc/group等。 </p>
+<p>下面分别介绍这些文件的内容。</p>
+<p><strong>/etc/passwd文件是用户管理工作涉及的最重要的一个文件。</strong> </p>
+<p>Linux系统中的每个用户都在/etc/passwd文件中有一个对应的记录行，它记录了这个用户的一些基本属性。</p>
+<p>这个文件对所有用户都是可读的。它的内容类似下面的例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[root@zangzang ~]<span class="comment"># cat /etc/passwd</span></span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">adm:x:3:4:adm:/var/adm:/sbin/nologin</span><br><span class="line">lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin</span><br><span class="line">sync:x:5:0:sync:/sbin:/bin/sync</span><br><span class="line">shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown</span><br><span class="line">halt:x:7:0:halt:/sbin:/sbin/halt</span><br><span class="line">mail:x:8:12:mail:/var/spool/mail:/sbin/nologin</span><br><span class="line">operator:x:11:0:operator:/root:/sbin/nologin</span><br><span class="line">games:x:12:100:games:/usr/games:/sbin/nologin</span><br><span class="line">ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin</span><br><span class="line">nobody:x:99:99:Nobody:/:/sbin/nologin</span><br><span class="line">systemd-bus-proxy:x:999:998:systemd Bus Proxy:/:/sbin/nologin</span><br><span class="line">systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin</span><br><span class="line">dbus:x:81:81:System message bus:/:/sbin/nologin</span><br><span class="line">polkitd:x:998:997:User <span class="keyword">for</span> polkitd:/:/sbin/nologin</span><br><span class="line">tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin</span><br><span class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br><span class="line">postfix:x:89:89::/var/spool/postfix:/sbin/nologin</span><br><span class="line">chrony:x:997:995::/var/lib/chrony:/sbin/nologin</span><br><span class="line">ntp:x:38:38::/etc/ntp:/sbin/nologin</span><br><span class="line">nscd:x:28:28:NSCD Daemon:/:/sbin/nologin</span><br><span class="line">tcpdump:x:72:72::/:/sbin/nologin</span><br><span class="line">mysql:x:1001:1001::/home/mysql:/sbin/nologin</span><br><span class="line">www:x:1002:1002::/home/www:/bin/bash</span><br><span class="line">admin:x:1003:1003::/home/admin:/bin/bash</span><br><span class="line">springboot:x:1004:1004::/home/springboot:/sbin/nologin</span><br><span class="line">zangzang:x:1005:1005::/home/zangzang:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>从上面的例子我们可以看到，<code>/etc/passwd</code>中一行记录对应着一个用户，每行记录又被冒号(:)分隔为7个 字段，其格式和具体含义如下：</p>
+<p><code>用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell</code></p>
+<ol>
+<li>“用户名”是代表用户账号的字符串。 通常长度不超过8个字符，并且由大小写字母和/或数字组成。登录名中不能有冒号(:)，因为冒号在这里 是分隔符。 为了兼容起见，登录名中最好不要包含点字符(.)，并且不使用连字符(-)和加号(+)打头。</li>
+<li>“口令”一些系统中，存放着加密后的用户口令字。 虽然这个字段存放的只是用户口令的加密串，不是明文，但是由于/etc/passwd文件对所有用户都可 读，所以这仍是一个安全隐患。因此，现在许多Linux 系统（如SVR4）都使用了shadow技术，把真正 的加密后的用户口令字存放到/etc/shadow文件中，而在/etc/passwd文件的口令字段中只存放一个特殊 的字符，例如“x”或者“*”。</li>
+<li>“用户标识号”是一个整数，系统内部用它来标识用户。 一般情况下它与用户名是一一对应的。如果几个用户名对应的用户标识号是一样的，系统内部将把它们 视为同一个用户，但是它们可以有不同的口令、不同的主目录以及不同的登录Shell等。 通常用户标识号的取值范围是0～65 535。0是超级用户root的标识号，1～99由系统保留，作为管理账 号，普通用户的标识号从100开始。在Linux系统中，这个界限是500。 </li>
+<li>“组标识号”字段记录的是用户所属的用户组。 它对应着/etc/group文件中的一条记录。</li>
+<li>“注释性描述”字段记录着用户的一些个人情况。 例如用户的真实姓名、电话、地址等，这个字段并没有什么实际的用途。在不同的Linux 系统中，这个 字段的格式并没有统一。在许多Linux系统中，这个字段存放的是一段任意的注释性描述文字，用做 finger命令的输出。 </li>
+<li>“主目录”，也就是用户的起始工作目录。它是用户在登录到系统之后所处的目录。在大多数系统中，各用户的主目录都被组织在同一个特定的目 录下，而用户主目录的名称就是该用户的登录名。各用户对自己的主目录有读、写、执行（搜索）权 限，其他用户对此目录的访问权限则根据具体情况设置。 </li>
+<li>用户登录后，要启动一个进程，负责将用户的操作传给内核，这个进程是用户登录到系统后运行的命 令解释器或某个特定的程序，即Shell。 Shell是用户与Linux系统之间的接口。Linux的Shell有许多种，每种都有不同的特点。常用的有 sh(Bourne Shell), csh(C Shell), ksh(Korn Shell), tcsh(TENEX/TOPS-20 type C Shell), bash(Bourne Again Shell)等。 系统管理员可以根据系统情况和用户习惯为用户指定某个Shell。如果不指定Shell，那么系统使用sh为默 认的登录Shell，即这个字段的值为/bin/sh。 用户的登录Shell也可以指定为某个特定的程序（此程序不是一个命令解释器）。 利用这一特点，我们可以限制用户只能运行指定的应用程序，在该应用程序运行结束后，用户就自动退 出了系统。有些Linux 系统要求只有那些在系统中登记了的程序才能出现在这个字段中。</li>
+<li>系统中有一类用户称为伪用户（pseudo users）。 这些用户在/etc/passwd文件中也占有一条记录，但是不能登录，因为它们的登录Shell为空。它们的存 在主要是方便系统管理，满足相应的系统进程对文件属主的要求。</li>
+</ol>
+<p><strong>常见的伪用户如下所示：</strong></p>
+<blockquote>
+<p>伪用户含义</p>
+<p>bin 拥有可执行的用户命令文件</p>
+<p>sys 拥有系统文件</p>
+<p>adm 拥有账户文件</p>
+<p>uucp UUCP使用</p>
+<p>lp lp或lpd子系统使用</p>
+<p>nobody NFS使用</p>
+</blockquote>
+<blockquote>
+<p>/etc/shadow</p>
+</blockquote>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Linux/" class="">
+              Linux
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>John Doe</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/2021/10/24/常用基本命令/" target="_blank" title="常用基本命令">https://zangblog.gitee.io/2021/10/24/常用基本命令/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/2021/10/26/MyBatis-Plus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BD%93%E9%AA%8C%E5%8F%8A%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">MyBatis-Plus快速入门体验及配置日志输出</div>
+      </div>
+      
+      <!-- <div class="content">
+        
+Mybatis-Plus
+
+特性
+无侵入：只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑
+
+损耗小：启动即
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/10.jpg" class="lazyload placeholder" data-srcset="/medias/10.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/2021/10/22/Linux%E5%BC%80%E6%9C%BA%E5%85%B3%E6%9C%BA%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Linux开机关机和基本目录介绍</div>
+      </div>
+      <!-- <div class="content">
+        开机开机会启动很多程序，他们在windows叫做服务，在Linux叫做”守护进程”
+开机成功后，它会显示一个文本登录界面
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/zfb.jpg" class="lazyload placeholder" data-srcset="/medias/zfb.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/wx.jpg" class="lazyload placeholder" data-srcset="/medias/wx.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>catalog</span>
+        
+          <div class="toc-open-close">catalog</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+
+          </div>
+        
+      
+        
+          
+            <!-- 不蒜子统计 -->
+            <!-- 不蒜子统计 -->
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>Total visits：<span id="busuanzi_value_site_pv"></span> times
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>Number of visitors：<span id="busuanzi_value_site_uv"></span> people
+</span>
+
+          
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js  
+  class=""
+  server="tencent"
+  type="playlist"
+  id="8062553743"
+  fixed='true'
+  autoplay='false'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="/js/fancybox/jquery.fancybox.min.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js" data-pjax></script>
+    
+    <!-- 文章目录所需js -->
+<link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
+</style> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+  <script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+    <script type="text/javascript">
+  var utteranceCommon = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', '')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>
