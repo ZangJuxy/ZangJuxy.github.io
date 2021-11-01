@@ -6,7 +6,7 @@
   <link href="https://zangblog.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://zangblog.gitee.io/"/>
-  <updated>2021-10-28T03:41:35.754Z</updated>
+  <updated>2021-11-01T12:15:29.779Z</updated>
   <id>https://zangblog.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>万金油Redis了解</title>
+    <link href="https://zangblog.gitee.io/2021/11/01/%E4%B8%87%E9%87%91%E6%B2%B9Redis%E4%BA%86%E8%A7%A3/"/>
+    <id>https://zangblog.gitee.io/2021/11/01/%E4%B8%87%E9%87%91%E6%B2%B9Redis%E4%BA%86%E8%A7%A3/</id>
+    <published>2021-11-01T10:28:09.000Z</published>
+    <updated>2021-11-01T12:15:29.779Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 class=&quot;bamboo-h red&quot; id=&quot;Redis入门&quot;&gt;Redis入门&lt;/h2&gt;&lt;br/&gt;
+
+&lt;h3 class=&quot;bamboo-h yello&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据库" scheme="https://zangblog.gitee.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="Redis" scheme="https://zangblog.gitee.io/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>从头开始的一个小项目-3登录及拦截器实现</title>
@@ -485,31 +512,6 @@
         
     <summary type="html">&lt;p&gt;person.java&lt;/p&gt;
 &lt;pre class=&quot;line-numbers language-java&quot; data-language=&quot;java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token</summary>
-        
-      
-    
-    
-    
-    <category term="反射" scheme="https://zangblog.gitee.io/categories/%E5%8F%8D%E5%B0%84/"/>
-    
-    
-    <category term="Spring5" scheme="https://zangblog.gitee.io/tags/Spring5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回顾反射</title>
-    <link href="https://zangblog.gitee.io/2021/09/15/%E5%9B%9E%E9%A1%BE%E5%8F%8D%E5%B0%84/"/>
-    <id>https://zangblog.gitee.io/2021/09/15/%E5%9B%9E%E9%A1%BE%E5%8F%8D%E5%B0%84/</id>
-    <published>2021-09-15T11:42:56.000Z</published>
-    <updated>2021-09-15T12:47:28.117Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;1、什么是反射机制？反射机制有啥用？&quot;&gt;&lt;a href=&quot;#1、什么是反射机制？反射机制有啥用？&quot; class=&quot;headerlink&quot;</summary>
         
       
     

@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>category: 数据库 | 臧臧</title>
+  <title>万金油Redis了解 | 臧臧</title>
 
   <link rel="icon" type="image/jpeg" href="/medias/zz.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -652,331 +652,680 @@
     <div id="safearea">
       <main class="main" id="pjax-container" style="margin-top: 0;">
         
-
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-categoryDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-
-<div class="category-header"  style="background-image:url('https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/29842afd880511ebb6edd017c2d2eca2.jpg')">
-  <div class="category-header-title">
-    category
-  </div>
-  <div class="category-header-desc">
+ <!-- prismjs 代码高亮 -->
+ 
     
-      <span class="title" id="category-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#category-header-desc';
-    const type = 'categoryDetail';
-    let desc = 'ᴵ  ʰᵒᵖᵉ  ⁱᵗˢ  ⁿᵒᵗ  ᵒⁿˡʸ ʷⁱⁿᵗᵉʳ ᵇᵘᵗ ᵃˡˢᵒ ʸᵒᵘ'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-      
-  </div>
-  <div class="mask-box"></div>
-</div>
+    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/js/prism/prism-dark.min.css" rel="stylesheet">
+    
 
-
-<div class="category">
-  <div class="category-name">
-    <div class="name" style="background-color: #F9E79F;">数据库 category</div>
-  </div>
-  <!-- 每一篇文章卡片 -->
-  <!-- hash算法 -->
-
-<section class="posts">
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
   
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-08-29</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/08/29/%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C/">基本的命令行操作</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySql/" rel="tag">MySql</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-</div>
 
 
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/08/29/%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            mysql -uroot -p123456 --连接数据库
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
 
-update mysql user set authentication_staring=password（'123456'） where user='root' and Hos
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/08/29/%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/08/29/%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-08-29</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/08/29/%E5%AE%89%E8%A3%85MySQL%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E-%E4%BB%A5%E5%8F%8A%E5%90%84%E7%A7%8D%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">安装MySQL详细说明(以及各种报错问题的解决)</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySql/" rel="tag">MySql</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/08/29/%E5%AE%89%E8%A3%85MySQL%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E-%E4%BB%A5%E5%8F%8A%E5%90%84%E7%A7%8D%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            安装MySQL
-解压
-把这个包放到自己的电脑环境目录下
-配置环境变量
-新建mysql配置文件ini 注意目录一定要换成自己的[mysqld] 
-basedir=E:\IntelliJ IDEA 2020.1.1\mysql-5.7.19\
-
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/08/29/%E5%AE%89%E8%A3%85MySQL%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E-%E4%BB%A5%E5%8F%8A%E5%90%84%E7%A7%8D%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/08/29/%E5%AE%89%E8%A3%85MySQL%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E-%E4%BB%A5%E5%8F%8A%E5%90%84%E7%A7%8D%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-08-13</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/08/13/%E7%B4%A2%E5%BC%95%E7%9A%84%E5%A4%B1%E6%95%88/">索引的失效</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySql/" rel="tag">MySql</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/08/13/%E7%B4%A2%E5%BC%95%E7%9A%84%E5%A4%B1%E6%95%88/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            索引的失效失效的第一种情况select * from emp where ename like '%T'
-
-​    此时即使ename上即使添加了索引，也不会走索引，因为当前使用的是模糊查询，其中以%开头了。应该尽量避免模糊查询的时候以%
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/08/13/%E7%B4%A2%E5%BC%95%E7%9A%84%E5%A4%B1%E6%95%88/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/08/13/%E7%B4%A2%E5%BC%95%E7%9A%84%E5%A4%B1%E6%95%88/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-08-13</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/08/13/%E7%B4%A2%E5%BC%95%E7%9A%84%E5%8E%9F%E7%90%86/">索引的原理</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySql/" rel="tag">MySql</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/08/13/%E7%B4%A2%E5%BC%95%E7%9A%84%E5%8E%9F%E7%90%86/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            索引的实现原理
-
-
-id
-name
-每一行记录在硬盘上的物理存储编号
-
-
-
-100
-张三
-0x123
-
-
-120
-李四
-0x456
-
-
-99
-王五
-0x897
-
-
-88
-赵六
-0x565
-
-
-101
-臧臧
-0x465
-
-
-55
-嘻嘻
-0x2
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/08/13/%E7%B4%A2%E5%BC%95%E7%9A%84%E5%8E%9F%E7%90%86/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/08/13/%E7%B4%A2%E5%BC%95%E7%9A%84%E5%8E%9F%E7%90%86/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-</section>
-</div>
-<div class="w-70">
-  
-  <!-- <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/page/2/">Prev</a><a class="page-number" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">1</a><a class="page-number" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/page/2/">2</a><span class="page-number current">3</span>
-  </nav> -->
-  <div class="page-nav">
-    
-      <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/page/2/"
-         class="page-nav-pre">
-         <i class="fas fa-angle-left"></i><span class="ml-5">Prev</span>
-      </a>
-    
-    <div class="page-info">
-        <div class="page-info-text">3 / 3</div>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        万金油Redis了解
+      </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2021-11-01 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> category：
+          
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-detail-header_category">
+              数据库
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> Words: 833 |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> Reading time: 3min |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> reading：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h2 class="bamboo-h red" id="Redis入门">Redis入门</h2><br/>
+
+<h3 class="bamboo-h yello" id="概述">概述</h3><br/>
+
+<blockquote>
+<p>Redis是什么</p>
+</blockquote>
+<span class='pbg red'>Redis：REmote DIctionary Server（远程字典服务器）</span>
+
+<p>是完全开源免费的，用C语言编写的，遵守BSD协议，是一个高性能的（Key/Value）分布式内存数据 库，基于内存运行，并支持持久化的NoSQL数据库，是当前最热门的NoSQL数据库之一，也被人们称为 数据结构服务器</p>
+<p>Redis与其他key-value缓存产品有以下三个特点 </p>
+<ul>
+<li>Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用。 </li>
+<li>Redis不仅仅支持简单的 key-value 类型的数据，同时还提供list、set、zset、hash等数据结构的存 储。 </li>
+<li>Redis支持数据的备份，即master-slave模式的数据备份。</li>
+</ul>
+<blockquote>
+<p>Redis能干嘛</p>
+</blockquote>
+<p>内存存储和持久化：redis支持异步将内存中的数据写到硬盘上，同时不影响继续服务 </p>
+<p>取最新N个数据的操作，如：可以将最新的10条评论的ID放在Redis的List集合里面 </p>
+<p>发布、订阅消息系统 地图信息分析 定时器、计数器</p>
+<blockquote>
+<p>特性</p>
+</blockquote>
+<p>数据类型、基本操作和配置 </p>
+<p>持久化和复制，RDB、AOF </p>
+<p>事务的控制</p>
+<blockquote>
+<p>常用网站</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://redis.io/">https://redis.io/</a> 官网</p>
+<p><a target="_blank" rel="noopener" href="http://www.redis.cn/">http://www.redis.cn</a> 中文网</p>
+<h3 class="bamboo-h yello" id="Redis环境下安装">Redis环境下安装</h3><br/>
+
+<p>由于企业中做Redis开发，99%都是Linux版的运用和安装，几乎不会涉及到Windows版所以就直接讲解怎么安装在Linux环境下了</p>
+<h3 class="bamboo-h blue" id="Linux安装">Linux安装</h3><br/>
+
+<p>下载地址 <a target="_blank" rel="noopener" href="http://download.redis.io/releases/redis-5.0.7.tar.gz">http://download.redis.io/releases/redis-5.0.7.tar.gz</a></p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101185855155.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101185855155.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211101185855155"></p>
+<blockquote>
+<p>安装步骤</p>
+</blockquote>
+<p>1、下载获得<span class='pbg red'>redis-5.0.7.tar.gz</span></p>
+<p>2、/otp目录下，解压命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> -zxvf redis-5.0.7.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>3、解压完成后出现文件夹：<img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101190907794.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101190907794.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211101190907794"></p>
+<p>4、进入目录：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> redis-5.0.7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>5、在redis-5.0.7目录下执行make命令</p>
+<blockquote>
+<p>运行make命令时故意出现的错误解析： </p>
+<ol>
+<li>安装gcc (gcc是linux下的一个编译程序，是c程序的编译工具) </li>
+<li>能上网: yum install gcc-c++ </li>
+<li>版本测试: gcc-v  </li>
+<li>二次make </li>
+<li>Jemalloc/jemalloc.h: 没有那个文件或目录 运行 make distclean 之后再make </li>
+<li>Redis Test（可以不用执行）</li>
+</ol>
+</blockquote>
+<p>6、<img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101191757319.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101191757319.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211101191757319"></p>
+<p>安装完成</p>
+<p>7、继续执行 make install</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101191916416.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101191916416.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211101191916416"></p>
+<p>8、查看默认安装目录：usr/local/bin</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;usr 这是一个非常重要的目录，类似于windows下的Program Files,存放用户的程序<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101192143915.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101192143915.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211101192143915"></p>
+<p>9、将Redis配置文件进行备份</p>
+<p>​        创建一个自己的配置文件夹</p>
+<p>​        将配置文件进行备份    </p>
+<p>​        <img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101194036778.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101194036778.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211101194036778"></p>
+<p>10、vim打开配置文件修改配置</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101194533029.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101194533029.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211101194533029"></p>
+<p>11、修改完之后进行启动</p>
+<p>​        通过配置文件进行启动</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101200017634.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101200017634.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211101200017634"></p>
+<p>12、连接客户端</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@izbp1cptoov44lrqjntx6nz bin<span class="token punctuation">]</span><span class="token comment"># redis-cli -p 6379</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>13、修改密码</p>
+<span class='pbg red'>超级重要，我第一次没有设置就被植入木马了</span>
+
+<p>输入config get requirepass //查询密码</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101200355852.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211101200355852.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211101200355852"></p>
+<p>就说明还没有输入密码此时要去设置</p>
+<span class='pbg red'>config set requirepass 你的密码</span>
+
+<p>关闭服务命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">带密码输入： redis-cli -a <span class="token punctuation">[</span>password<span class="token punctuation">]</span> 回车后输入：shutdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动redis服务器命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./redis-server 这种启动 redis使用的是默认配置
+
+./redis-server <span class="token punctuation">..</span>/redis.conf 也可以通过启动参数告诉redis使用指定配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>下次登录的时候使用密码连接</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">3</span>.使用密码连接
+
+/redis-cli -h <span class="token number">127.0</span>.0.1 -p <span class="token number">6379</span> -a 密码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Redis/" class="">
+              Redis
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>臧臧</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/2021/11/01/万金油Redis了解/" target="_blank" title="万金油Redis了解">https://zangblog.gitee.io/2021/11/01/万金油Redis了解/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/g75r7d.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/g75r7d.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/2021/10/28/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-3%E7%99%BB%E5%BD%95%E5%8F%8A%E6%8B%A6%E6%88%AA%E5%99%A8%E5%AE%9E%E7%8E%B0/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">从头开始的一个小项目-3登录及拦截器实现</div>
+      </div>
+      <!-- <div class="content">
+        登录功能@RequestMapping(value = "/user/login")
+public String use
+      </div> -->
+    </a>
   </div>
 
 </div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/1635761289770.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/1635761289770.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/mm_facetoface_collect_qrcode_1635761317101.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/mm_facetoface_collect_qrcode_1635761317101.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>catalog</span>
+        
+          <div class="toc-open-close">catalog</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '8000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || 'https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/161c5f5164744bd08c8c151e12dd4e77.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/836713b152b64b809fe409cdf1008fae.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0432a40b6ab749f8ae473d5c7e9ce12a.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/34a8e424880511ebb6edd017c2d2eca2.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/ced7813d880f11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/a202c44c2075478dbfac39baeb800046.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/29842afd880511ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/anime-festival-kimono-anime-girl-torii-shrine-braid-anime-46563-thumb.jpeg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/g75r7d.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/z8dg9y.jpg';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
