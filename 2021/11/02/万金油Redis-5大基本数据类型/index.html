@@ -679,7 +679,7 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/1a470393880911ebb6edd017c2d2eca2.png')">
+  background-position: center center;position: relative;background-image:url('https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
@@ -711,11 +711,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> Words: 1.2k |
+            <i class="fas fa-file-text-o"></i> Words: 2.2k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> Reading time: 5min |
+            <i class="fas fa-clock"></i> Reading time: 10min |
           </span>
   
           
@@ -894,7 +894,174 @@ OK
 <span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get key
 <span class="token string">"axxxbdjawkbf"</span>
 <span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># setex（set with expire）键秒值</span>
+<span class="token comment"># setnx（set if not exist）</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> setex key3 <span class="token number">60</span> expir <span class="token comment"># 设置过期时间</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ttl key3	<span class="token comment">#查看还有多长时间过期</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">54</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ttl key3
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">9</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ttl key3
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> -2
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> keys *
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"name"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"key"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"views"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> setnx mykey <span class="token string">"redis"</span>  <span class="token comment"># 如果不存在就设置成功返回1</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> keys *
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"mykey"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"name"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"key"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"views"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get mykey
+<span class="token string">"redis"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> setnx mykey <span class="token string">"mongodb"</span> <span class="token comment"># 如果挫折就设置，失败返回0</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get mykey
+<span class="token string">"redis"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># mset Mset 命令用于同时设置一个或多个 key-value 对。</span>
+<span class="token comment"># mget Mget 命令返回所有(一个或多个)给定 key 的值。</span>
+<span class="token comment"># 如果给定的 key 里面，有某个 key 不存在，那么这个 key 返回特殊值 nil 。</span>
+<span class="token comment"># msetnx 当所有 key 都成功设置，返回 1 。</span>
+<span class="token comment"># 如果所有给定 key 都设置失败(至少有一个 key 已经存在)，那么返回 0 。原子操作</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> mset zz1 zzone zz2 zztwo
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> mget zz1 zz2
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"zzone"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"zztwo"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> msetnx zz1 zzo zz3 zzone
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get zz1
+<span class="token string">"zzone"</span>
+<span class="token comment"># ====================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> mset user:1:name zz user:1:age <span class="token number">2</span> <span class="token comment"># 缓存对象</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> mget user:1:name user:1:age	<span class="token comment"># 获取对象的值其实这个: 我感觉和java里边的.一样</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"zz"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"2"</span>
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># getset（先get再set）</span>
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> getset db mongodb <span class="token comment"># 没有旧值，返回 nil</span>
+<span class="token punctuation">(</span>nil<span class="token punctuation">)</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get db
+<span class="token string">"mongodb"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> getset db redis <span class="token comment"># 返回旧值 mongodb</span>
+<span class="token string">"mongodb"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get db
+<span class="token string">"redis"</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>String数据结构是简单的key-value类型，value其实不仅可以是String，也可以是数字。 常规key-value缓存应用： 常规计数：微博数，粉丝数等。</p>
+</blockquote>
+<h2 class="bamboo-h red" id="列表List">列表List</h2><br/>
+
+<span class='pbg yellow'>单值多Value</span>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ===================================================</span>
+<span class="token comment"># Lpush：将一个或多个值插入到列表头部。（左）</span>
+<span class="token comment"># rpush：将一个或多个值插入到列表尾部。（右）</span>
+<span class="token comment"># lrange：返回列表中指定区间内的元素，区间以偏移量 START 和 END 指定。</span>
+<span class="token comment"># 其中 0 表示列表的第一个元素， 1 表示列表的第二个元素，以此类推。</span>
+<span class="token comment"># 你也可以使用负数下标，以 -1 表示列表的最后一个元素， -2 表示列表的倒数第二个元素，以此类推。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lpush list <span class="token string">"one"</span>   <span class="token comment">#	插入到列表头部</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lpush list <span class="token string">"two"</span>   
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> rpush list <span class="token string">"three"</span> <span class="token comment">#	插入到列表尾部</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange list <span class="token number">0</span> -1	<span class="token comment">#	显示所有的数据</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"two"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"one"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"three"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange list <span class="token number">0</span> <span class="token number">1</span>  	<span class="token comment">#	从x-y显示</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"two"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"one"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># lpop 命令用于移除并返回列表的第一个元素。当列表 key 不存在时，返回 nil 。</span>
+<span class="token comment"># rpop 移除列表的最后一个元素，返回值为移除的元素。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange list <span class="token number">0</span> -1	
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"two"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"one"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"three"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lpop list	
+<span class="token string">"two"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange list <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"one"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"three"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> rpop list
+<span class="token string">"three"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange list <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"one"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># Lindex，按照索引下标获得元素（-1代表最后一个，0代表是第一个）</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lpush list <span class="token string">"onee"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lindex list <span class="token number">1</span>
+<span class="token string">"one"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lindex list <span class="token number">0</span>
+<span class="token string">"onee"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lindex list -1
+<span class="token string">"one"</span>
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># llen 用于返回列表的长度。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> flushdb
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> keys *
+<span class="token punctuation">(</span>empty list or <span class="token builtin class-name">set</span><span class="token punctuation">)</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lpush list one
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lpush list two
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lpush list three
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> llen list <span class="token comment"># 返回列表的长度</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># lrem key 根据参数 COUNT 的值，移除列表中与参数 VALUE 相等的元素。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrem list <span class="token number">1</span> two
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange list <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"three"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"one"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># Ltrim key 对一个列表进行修剪(trim)，就是说，让列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除。</span>
+<span class="token comment"># ===================================================</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -903,6 +1070,8 @@ OK
 <div class="site-card-group">
 <a class="site-card" href="https://zangblog.gitee.io/"><div class="img"><img src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info"><img src="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">臧臧</span><span class="desc">勿在浮沙筑高楼</span></div></a>
 </div>
+
+
       </div>
       <div class="post-tags-categories">
         
@@ -947,7 +1116,7 @@ OK
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/g75r7d.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/g75r7d.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/ced7813d880f11ebb6edd017c2d2eca2.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/ced7813d880f11ebb6edd017c2d2eca2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
     <a href="/2021/11/01/%E4%B8%87%E9%87%91%E6%B2%B9Redis%E4%BA%86%E8%A7%A3/" class="post-nav-link">
       <div class="title">
@@ -1314,7 +1483,7 @@ Redis：REmote DIctionary Server（远程字典服
 			clearInterval(this.time);
 		},
 		mounted() {
-			let prop = '' || 'https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/161c5f5164744bd08c8c151e12dd4e77.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/836713b152b64b809fe409cdf1008fae.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0432a40b6ab749f8ae473d5c7e9ce12a.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/34a8e424880511ebb6edd017c2d2eca2.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/ced7813d880f11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/a202c44c2075478dbfac39baeb800046.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/29842afd880511ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/anime-festival-kimono-anime-girl-torii-shrine-braid-anime-46563-thumb.jpeg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/g75r7d.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/z8dg9y.jpg';
+			let prop = '' || 'https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/161c5f5164744bd08c8c151e12dd4e77.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/836713b152b64b809fe409cdf1008fae.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0432a40b6ab749f8ae473d5c7e9ce12a.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/34a8e424880511ebb6edd017c2d2eca2.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/ced7813d880f11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/a202c44c2075478dbfac39baeb800046.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/29842afd880511ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/anime-festival-kimono-anime-girl-torii-shrine-braid-anime-46563-thumb.jpeg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/g75r7d.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/z8dg9y.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-1ac4990145e4e2a68189092cab5c5eed_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-d4f4bad18789947c346d0a9020aec17e_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-a2fd74156c563cf2f22cf13a25782b15_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-f2188045fbb90d399fab73686c17ca68_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-dd0395c8daab36c23374fc5a5e24a7c0_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-c6e12c266ed4ed9ddf79d3cb90512fb3_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-93d93a0dbbdd22c9bd3bb3c2fce87569_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-265c332001134b64b5e63b1037c8a4fa_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-5d0faa848f633883962b9318b9e9856b_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-ad87bae321dde89a5d05340a3fa7f33d_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-a6e26cf0d887cd454694bf700ee3ae8c_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-29a5052691524ca7fdac1005c3e8e44f_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-7b5ed3b367c2a88426f325232e5d4aa0_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-0cefa85f78f98647f175c949aa2b29d3_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-e319a376e49e2d2866c00ba813994c5a_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-534a08bf6330088bb55146115bfa6b42_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-2e97178d2a79a8dab6d53bb531fbfc43_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-1d8f727fc0a0e9ca4d289c2b09aefa29_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-70c299e14f72dda1ff429ed4c9227490_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-84ea78fae2de70cc4fb223a53896e644_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-eb23900519f1cadc9f4b7672bd9a307a_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-005fcd818f46aa10bfa0acb71995bc0c_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-c078a7489a7f116e15d15cdea968308a_720w.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-3555264f5eefcae500c2cc13676b81ba_720w.jpg';
 			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
 			if (isImg) {
 				let img = prop.split(',');

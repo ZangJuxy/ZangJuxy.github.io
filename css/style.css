@@ -175,7 +175,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #fff;
 }
 .bg-floor {
-  background: url("https://pic1.zhimg.com/80/v2-b4b71405d08bc1952025ba1bd5db54f3_1440w.jpg?source=1940ef5c");
+  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/34a8e424880511ebb6edd017c2d2eca2.png");
   background-size: cover;
   transition: all 0.3s;
 }
@@ -666,7 +666,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   }
 }
 .header-bg-color {
-  background: #42b983;
+  background: url("/video/idea.jpg");
 }
 .header {
   position: relative;
@@ -768,7 +768,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   opacity: 0;
 }
 .header .header-content .navbar .menu .menu-item .sub-menu li {
-  background: #42b983;
+  background: url("/video/idea.jpg");
   width: 140px;
   text-align: center;
   line-height: 45px;
