@@ -711,11 +711,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> Words: 833 |
+            <i class="fas fa-file-text-o"></i> Words: 1.6k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> Reading time: 3min |
+            <i class="fas fa-clock"></i> Reading time: 6min |
           </span>
   
           
@@ -843,6 +843,52 @@
 
 /redis-cli -h <span class="token number">127.0</span>.0.1 -p <span class="token number">6379</span> -a 密码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<h2 class="bamboo-h " id="基本数据库常识">基本数据库常识</h2><br/>
+
+<p>默认16个数据库，类似数组下标从零开始，初始默认使用零号库</p>
+<p>查看redis.conf，里边有默认配置</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211102080321435.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211102080321435.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211102080321435"></p>
+<p>Select命令切换数据库</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> <span class="token keyword">select</span> <span class="token number">7</span>
+OK
+<span class="token number">127.0</span>.0.1:6379<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token operator">></span> 
+
+<span class="token comment"># 不同库可以存不同的数据</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Dbsize查看当前数据库的key的数量</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> <span class="token keyword">select</span> <span class="token number">7</span>
+OK
+<span class="token number">127.0</span>.0.1:6379<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token operator">></span> DBSIZE
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:6379<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token keyword">select</span> <span class="token number">0</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> DBSIZE
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> keys * <span class="token comment"># 查看具体的key</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"name"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span class='pbg yellow'>Flushdb</span>:清空当前的库
+
+<span class='pbg red'>Flushall</span>:清空全部的库
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> flushdb
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> dbsize
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>为什么端口号是6379？ 因为redis作者是MERZ粉丝罢了</p>
+</blockquote>
+<blockquote>
+<p>为什么redis是单线程的</p>
+</blockquote>
+<p>我们首先要明白，Redis很快！官方表示，因为Redis是基于内存的操作，CPU不是Redis的瓶颈，Redis 的瓶颈最有可能是机器内存的大小或者网络带宽。既然单线程容易实现，而且CPU不会成为瓶颈，那就 顺理成章地采用单线程的方案了！</p>
+<p>Redis采用的是基于内存的采用的是单进程单线程模型的 KV 数据库，由C语言编写，官方提供的数据是 可以达到100000+的QPS（每秒内查询次数）。这个数据不比采用单进程多线程的同样基于内存的 KV 数据库 Memcached 差！</p>
+<p><strong>Redis为什么这么快？</strong></p>
+<p>1）以前一直有个误区，以为：高性能服务器 一定是多线程来实现的 原因很简单因为误区二导致的：多线程 一定比 单线程 效率高，其实不然！ 在说这个事前希望大家都能对 CPU 、 内存 、 硬盘的速度都有了解了！ </p>
+<p>2）redis 核心就是 如果我的数据全都在内存里，我单线程的去操作 就是效率最高的，为什么呢，因为 多线程的本质就是 CPU 模拟出来多个线程的情况，这种模拟出来的情况就有一个代价，就是上下文的切 换，对于一个内存的系统来说，它没有上下文的切换就是效率最高的。redis 用 单个CPU 绑定一块内存 的数据，然后针对这块内存的数据进行多次读写的时候，都是在一个CPU上完成的，所以它是单线程处 理这个事。在内存的情况下，这个方案就是最佳方案。 </p>
+<p>因为一次CPU上下文的切换大概在 1500ns 左右。从内存中读取 1MB 的连续数据，耗时大约为 250us， 假设1MB的数据由多个线程读取了1000次，那么就有1000次时间上下文的切换，那么就有1500ns * 1000 = 1500us ，我单线程的读完1MB数据才250us ,你光时间上下文的切换就用了1500us了，我还不 算你每次读一点数据 的时间。</p>
 
       </div>
       <div class="post-tags-categories">
@@ -881,6 +927,29 @@
 <div class="post-nav">
 
 
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/anime-festival-kimono-anime-girl-torii-shrine-braid-anime-46563-thumb.jpeg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/anime-festival-kimono-anime-girl-torii-shrine-braid-anime-46563-thumb.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/2021/11/02/Redis-5%E5%A4%A7%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">Redis-5大基本数据类型</div>
+      </div>
+      
+      <!-- <div class="content">
+        
+官方文档
+
+
+全段翻译： 
+Redis是一个开放源代码（BSD许可）的内存中数据结构存储，用作数据库，缓存和消息代理。
+      </div> -->
+    </a>
+  </div>
 
 
 
@@ -1461,9 +1530,9 @@ public String use
 </style>
 <meting-js  
   class=""
-  server="tencent"
+  server="netease"
   type="playlist"
-  id="8062553743"
+  id="6695594457"
   fixed='true'
   autoplay='false'
   theme='#42b983'
