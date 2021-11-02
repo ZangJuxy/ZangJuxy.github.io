@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Redis-5大基本数据类型 | 臧臧</title>
+  <title>万金油Redis-5大基本数据类型 | 臧臧</title>
 
   <link rel="icon" type="image/jpeg" href="/medias/zz.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -679,14 +679,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/anime-festival-kimono-anime-girl-torii-shrine-braid-anime-46563-thumb.jpeg')">
+  background-position: center center;position: relative;background-image:url('https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/161c5f5164744bd08c8c151e12dd4e77.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        Redis-5大基本数据类型
+        万金油Redis-5大基本数据类型
       </span>
     </div>
     
@@ -711,11 +711,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> Words: 765 |
+            <i class="fas fa-file-text-o"></i> Words: 1.2k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> Reading time: 3min |
+            <i class="fas fa-clock"></i> Reading time: 5min |
           </span>
   
           
@@ -823,7 +823,86 @@ string
 <span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 class="bamboo-h red" id="字符串String">字符串String</h2><br/>
 
+<span class='pbg yellow'>单值单Value</span>
+
+<blockquote>
+<p>常用命令说明</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ===================================================</span>
+<span class="token comment"># set、get、del、append、strlen</span>
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> <span class="token builtin class-name">set</span> key value1 <span class="token comment"># 设置key</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get key 	<span class="token comment"># 得到key</span>
+<span class="token string">"value1"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> del key		<span class="token comment"># 删除key</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> keys *		<span class="token comment"># 查看表中所以key</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"name"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> exists key <span class="token comment"># 查看指定key是否存在</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> append key <span class="token string">"hello"</span> <span class="token comment"># 对不存在的key进行创建，对已存在的进行追加</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">5</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> append key <span class="token string">"zangzang"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">13</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get key 
+<span class="token string">"hellozangzang"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> strlen key		<span class="token comment"># 查看key长度</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">13</span>
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># incr、decr 一定要是数字才能进行加减，+1 和 -1。</span>
+<span class="token comment"># incrby、decrby 命令将 key 中储存的数字加上指定的增量值。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> <span class="token builtin class-name">set</span> views <span class="token number">0</span> <span class="token comment"># 设置浏览量为0</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> incr views  <span class="token comment"># 浏览量+1 </span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> incr views	<span class="token comment"># 浏览量+1</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> decr views  <span class="token comment"># 浏览量-1</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> incrby views <span class="token number">10</span> <span class="token comment"># 浏览量+10</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">11</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> decrby views <span class="token number">10</span> <span class="token comment"># 浏览量-10</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># range [范围]</span>
+<span class="token comment"># getrange 获取指定区间范围内的值，类似between...and的关系，从零到负一表示全部</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> <span class="token builtin class-name">set</span> key adawbdjawkbf	<span class="token comment"># 设置key的值</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> getrange key <span class="token number">0</span> -1 		<span class="token comment"># 取出所有的值</span>
+<span class="token string">"adawbdjawkbf"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> getrange key <span class="token number">0</span> <span class="token number">2</span> 		<span class="token comment"># 截取部分字符串</span>
+<span class="token string">"ada"</span>
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># setrange 设置指定区间范围内的值，格式是setrange key值 具体值</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get key
+<span class="token string">"adawbdjawkbf"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> setrange key <span class="token number">1</span> xxx <span class="token comment"># 替换值</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">12</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> get key
+<span class="token string">"axxxbdjawkbf"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<div class="site-card-group">
+<a class="site-card" href="https://zangblog.gitee.io/"><div class="img"><img src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info"><img src="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">臧臧</span><span class="desc">勿在浮沙筑高楼</span></div></a>
+</div>
       </div>
       <div class="post-tags-categories">
         
@@ -844,7 +923,7 @@ string
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/11/02/Redis-5大基本数据类型/" target="_blank" title="Redis-5大基本数据类型">https://zangblog.gitee.io/2021/11/02/Redis-5大基本数据类型/</a>
+    <a href="/2021/11/02/万金油Redis-5大基本数据类型/" target="_blank" title="万金油Redis-5大基本数据类型">https://zangblog.gitee.io/2021/11/02/万金油Redis-5大基本数据类型/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -1235,7 +1314,7 @@ Redis：REmote DIctionary Server（远程字典服
 			clearInterval(this.time);
 		},
 		mounted() {
-			let prop = '' || 'https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/161c5f5164744bd08c8c151e12dd4e77.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/836713b152b64b809fe409cdf1008fae.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0432a40b6ab749f8ae473d5c7e9ce12a.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/34a8e424880511ebb6edd017c2d2eca2.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/ced7813d880f11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/a202c44c2075478dbfac39baeb800046.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/29842afd880511ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/anime-festival-kimono-anime-girl-torii-shrine-braid-anime-46563-thumb.jpeg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/g75r7d.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/z8dg9y.jpg';
+			let prop = '' || 'https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/c5398839880411ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/161c5f5164744bd08c8c151e12dd4e77.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/836713b152b64b809fe409cdf1008fae.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0432a40b6ab749f8ae473d5c7e9ce12a.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/34a8e424880511ebb6edd017c2d2eca2.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0fc5079a881a11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/ced7813d880f11ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/a202c44c2075478dbfac39baeb800046.png,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/29842afd880511ebb6edd017c2d2eca2.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/anime-festival-kimono-anime-girl-torii-shrine-braid-anime-46563-thumb.jpeg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/g75r7d.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/pkw6y3.jpg,https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/z8dg9y.jpg,/video/tt.avi,/video/ttone.avi,/video/tttwo.avi,/video/ttthree.avi,/video/ttfour.avi,/video/ttfive.avi';
 			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
 			if (isImg) {
 				let img = prop.split(',');
