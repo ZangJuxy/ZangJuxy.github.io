@@ -710,11 +710,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> Words: 2.3k |
+            <i class="fas fa-file-text-o"></i> Words: 3.1k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> Reading time: 11min |
+            <i class="fas fa-clock"></i> Reading time: 14min |
           </span>
   
           
@@ -1087,8 +1087,112 @@ OK
 <span class="token comment"># ===================================================</span>
 
 
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> rpush mylist <span class="token string">"hello"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> rpush mylist <span class="token string">"foo"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> rpush mylist <span class="token string">"bar"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> rpoplpush mylist myotherlist
+<span class="token string">"bar"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange mylist <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"foo"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange myotherlist <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"bar"</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># lset key index value 将列表 key 下标为 index 的元素的值设置为 value 。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> exists list <span class="token comment"># 查看是否存在列表list</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange list <span class="token number">0</span> -1 <span class="token comment"># 查看列表里边存在的value</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"two"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"three"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lset list <span class="token number">0</span> one <span class="token comment"># 将list列表中下标为0的key值存为one</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange list <span class="token number">0</span> -1 <span class="token comment"># 查看所有value</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"one"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"three"</span>
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># linsert key before/after pivot value 用于在列表的元素前或者后插入元素。</span>
+<span class="token comment"># 将值 value 插入到列表 key 当中，位于值 pivot 之前或之后。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> flushdb	<span class="token comment"># 清空一下数据库</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange mylist <span class="token number">0</span> -1 <span class="token comment"># 查看mylist中所有值</span>
+<span class="token punctuation">(</span>empty list or <span class="token builtin class-name">set</span><span class="token punctuation">)</span>	<span class="token comment"># 不存在</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> rpush mylist hello world
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange mylist <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"world"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> linsert mylist before hello zangzang <span class="token comment"># 在hello后面插入zangzang</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> lrange mylist <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"zangzang"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"world"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>1、它是一个字符串链表，left，right 都可以插入添加 </p>
+<p>2、如果键不存在，创建新的链表 </p>
+<p>3、如果键已存在，新增内容 </p>
+<p>4、如果值全移除，对应的键也就消失了 </p>
+<p>5、链表的操作无论是头和尾效率都极高，但假如是对中间元素进行操作，效率就很惨淡了。</p>
+</blockquote>
+<span class='pbg yellow'>list就是链表，略有数据结构知识的人都应该能理解其结构。使用Lists结构，我们可以轻松地实现最新消 息排行等功能。List的另一个应用就是消息队列，可以利用List的PUSH操作，将任务存在List中，然后工 作线程再用POP操作将任务取出进行执行。Redis还提供了操作List中某一段的api，你可以直接查询，删 除List中某一段的元素。 Redis的list是每个子元素都是String类型的双向链表，可以通过push和pop操作从列表的头部或者尾部 添加或者删除元素，这样List即可以作为栈，也可以作为队列。</span>
+
+
+
+<h2 class="bamboo-h red" id="集合Set">集合Set</h2><br/>
+
+<span class='pbg yellow'>单值多Value</span>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ===================================================</span>
+<span class="token comment"># sadd 将一个或多个成员元素加入到集合中，不能重复</span>
+<span class="token comment"># smembers 返回集合中的所有的成员。</span>
+<span class="token comment"># sismember 命令判断成员元素是否是集合的成员。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sadd myset <span class="token string">"hello"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sadd myset <span class="token string">"zangzang"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sadd myset <span class="token string">"zangzang"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> smembers myset
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"zangzang"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sismember myset zangzang
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sismember myset world
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># scard，获取集合里面的元素个数</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> scard myset
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># srem key value 用于移除集合中的一个或多个成员元素</span>
+<span class="token comment"># ===================================================</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
 
 
 
