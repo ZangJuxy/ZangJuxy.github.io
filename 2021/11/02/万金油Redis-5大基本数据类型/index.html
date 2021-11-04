@@ -710,11 +710,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> Words: 3.1k |
+            <i class="fas fa-file-text-o"></i> Words: 3.8k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> Reading time: 14min |
+            <i class="fas fa-clock"></i> Reading time: 17min |
           </span>
   
           
@@ -1188,11 +1188,129 @@ OK
 <span class="token comment"># srem key value 用于移除集合中的一个或多个成员元素</span>
 <span class="token comment"># ===================================================</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> srem myset zangzang
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
 
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># srandmember key 命令用于返回集合中的一个随机元素。</span>
+<span class="token comment"># ===================================================</span>
 
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> srandmember myset 
+<span class="token string">"world"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> srandmember myset 
+<span class="token string">"world"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> srandmember myset 
+<span class="token string">"hello"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> srandmember myset <span class="token number">2</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"world"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
 
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># spop key 用于移除集合中的指定 key 的一个或多个随机元素</span>
+<span class="token comment"># ===================================================</span>
 
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> smembers myset
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"world"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> spop myset 
+<span class="token string">"world"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> smembers myset
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> smembers myset
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> spop myset 
+<span class="token string">"hello"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> smembers myset
+<span class="token punctuation">(</span>empty list or <span class="token builtin class-name">set</span><span class="token punctuation">)</span>
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># smove SOURCE DESTINATION MEMBER</span>
+<span class="token comment"># 将指定成员 member 元素从 source 集合移动到 destination 集合。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> flushdb
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sadd myset hello
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sadd myset world
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sadd myset2 hellotwo
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> smembers myset
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"world"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> smove myset myset2 hello
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> smembers myset
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"world"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> smembers myset2
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"hellotwo"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+- 数字集合类
+- 差集： <span class="token function">sdiff</span>
+- 交集： sinter
+- 并集： sunion
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> flushdb	<span class="token comment"># 清空数据库</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sadd key1 a b c 
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sadd key2 b c d
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> <span class="token function">sdiff</span> key1 key2 <span class="token comment"># 这个和顺序也有关系，如果key1在前边那么只显示key1里边有而key2里边没有的值，反正则道理一样</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"a"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> <span class="token function">sdiff</span> key2 key1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"d"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sinter key1 key2
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"c"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"b"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sunion key2 key1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"c"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"b"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"d"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"a"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> sunion key1 key2
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"c"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"d"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"b"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"a"</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>在微博应用中，可以将一个用户所有的关注人存在一个集合中，将其所有粉丝存在一个集合。Redis还为 集合提供了求交集、并集、差集等操作，可以非常方便的实现如共同关注、共同喜好、二度好友等功 能，对上面的所有集合操作，你还可以使用不同的命令选择将结果返回给客户端还是存集到一个新的集合中。</p>
+</blockquote>
+<h2 class="bamboo-h red" id="哈希Hash">哈希Hash</h2><br/>
+
+<span class='pbg yellow'>kv不变</span>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ===================================================</span>
+<span class="token comment"># hset、hget 命令用于为哈希表中的字段赋值 。</span>
+<span class="token comment"># hmset、hmget 同时将多个field-value对设置到哈希表中。会覆盖哈希表中已存在的字段。</span>
+<span class="token comment"># hgetall 用于返回哈希表中，所有的字段和值。</span>
+<span class="token comment"># hdel 用于删除哈希表 key 中的一个或多个指定字段</span>
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hset myhash field1 zz
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hget myhash field1
+<span class="token string">"zz"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hmset myhash field1 zzone field2 hello
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hget myhash field1
+<span class="token string">"zzone"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hget myhash field2
+<span class="token string">"hello"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hgetall myhash
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"field1"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"zzone"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"field2"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
