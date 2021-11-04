@@ -710,11 +710,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> Words: 3.8k |
+            <i class="fas fa-file-text-o"></i> Words: 4.9k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> Reading time: 17min |
+            <i class="fas fa-clock"></i> Reading time: 23min |
           </span>
   
           
@@ -1310,9 +1310,186 @@ OK
 <span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"field2"</span>
 <span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"hello"</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># hlen 获取哈希表中字段的数量。</span>
+<span class="token comment"># ===================================================</span>
 
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hlen myhash
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hmset myhash field1 zangzang field2 zangzangone
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hlen myhash
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hgetall myhash
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"field1"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"zangzang"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"field2"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"zangzangone"</span>
 
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># hexists 查看哈希表的指定字段是否存在。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hexists myhash field1
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hexists myhash field3
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># hkeys 获取哈希表中的所有域（field）。</span>
+<span class="token comment"># hvals 返回哈希表所有域(field)的值。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hkeys myhash
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"field1"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"field2"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hvals myhash
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"zangzang"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"zangzangone"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># hincrby 为哈希表中的字段值加上指定增量值。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hset myhash field <span class="token number">5</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hincrby <span class="token builtin class-name">hash</span> field <span class="token number">1</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hincrby <span class="token builtin class-name">hash</span> field -1
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hincrby myhash field <span class="token number">1</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">6</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hincrby myhash field -1
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">5</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> hincrby myhash field -10
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> -5
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> 
+
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># hsetnx 为哈希表中不存在的的字段赋值 。</span>
+<span class="token comment"># ===================================================</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> HSETNX myhash field1 <span class="token string">"hello"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span> <span class="token comment"># 设置成功，返回 1 。</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> HSETNX myhash field1 <span class="token string">"world"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span> <span class="token comment"># 如果给定字段已经存在，返回 0 。</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> HGET myhash field1
+<span class="token string">"hello"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>Redis hash是一个string类型的field和value的映射表，hash特别适合用于存储对象。 存储部分变更的数据，如用户信息等。</p>
+</blockquote>
+<h2 class="bamboo-h red" id="有序集合Zset">有序集合Zset</h2><br/>
+
+<span class='pbg yellow'>在set基础上，加一个score值。之前set是k1 v1 v2 v3，现在zset是 k1 score1 v1 score2 v2</span>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ===================================================</span>
+<span class="token comment"># zadd 将一个或多个成员元素及其分数值加入到有序集当中。</span>
+<span class="token comment"># zrange 返回有序集中，指定区间内的成员</span>
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd myset <span class="token number">1</span> <span class="token string">"one"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd myset <span class="token number">2</span> <span class="token string">"two"</span> <span class="token number">3</span> <span class="token string">"three"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZRANGE myset <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"one"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"two"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"three"</span>
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># zrangebyscore 返回有序集合中指定分数区间的成员列表。有序集成员按分数值递增(从小到大)</span>
+次序排列。
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd salary <span class="token number">2500</span> xiaoming
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd salary <span class="token number">5000</span> xiaohong
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd salary <span class="token number">500</span> zangzang
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token comment"># Inf无穷大量+∞,同样地,-∞可以表示为-Inf。</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZRANGEBYSCORE salary -inf +inf <span class="token comment"># 显示整个有序集</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"kuangshen"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"xiaoming"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"xiaohong"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZRANGEBYSCORE salary -inf +inf withscores <span class="token comment"># 递增排列</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"kuangshen"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"500"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"xiaoming"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"2500"</span>
+<span class="token number">5</span><span class="token punctuation">)</span> <span class="token string">"xiaohong"</span>
+<span class="token number">6</span><span class="token punctuation">)</span> <span class="token string">"5000"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZREVRANGE salary <span class="token number">0</span> -1 WITHSCORES <span class="token comment"># 递减排列</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"xiaohong"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"5000"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"xiaoming"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"2500"</span>
+<span class="token number">5</span><span class="token punctuation">)</span> <span class="token string">"kuangshen"</span>
+<span class="token number">6</span><span class="token punctuation">)</span> <span class="token string">"500"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZRANGEBYSCORE salary -inf <span class="token number">2500</span> WITHSCORES <span class="token comment"># 显示工资 &lt;=2500</span>
+的所有成员
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"kuangshen"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"500"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"xiaoming"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"2500"</span>
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># zrem 移除有序集中的一个或多个成员</span>
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZRANGE salary <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"kuangshen"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"xiaoming"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"xiaohong"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zrem salary zangzang
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZRANGE salary <span class="token number">0</span> -1
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"xiaoming"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"xiaohong"</span>
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># zcard 命令用于计算集合中元素的数量。</span>
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zcard salary
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+OK
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># zcount 计算有序集合中指定分数区间的成员数量。</span>
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd myset <span class="token number">1</span> <span class="token string">"hello"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd myset <span class="token number">2</span> <span class="token string">"world"</span> <span class="token number">3</span> <span class="token string">"zangzang"</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZCOUNT myset <span class="token number">1</span> <span class="token number">3</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZCOUNT myset <span class="token number">1</span> <span class="token number">2</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># zrank 返回有序集中指定成员的排名。其中有序集成员按分数值递增(从小到大)顺序排列。</span>
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd salary <span class="token number">2500</span> xiaoming
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd salary <span class="token number">5000</span> xiaohong
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zadd salary <span class="token number">500</span> zangzang
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZRANGE salary <span class="token number">0</span> -1 WITHSCORES <span class="token comment"># 显示所有成员及其 score 值</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"kuangshen"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"500"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"xiaoming"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"2500"</span>
+<span class="token number">5</span><span class="token punctuation">)</span> <span class="token string">"xiaohong"</span>
+<span class="token number">6</span><span class="token punctuation">)</span> <span class="token string">"5000"</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zrank salary zangzang <span class="token comment"># 显示 kuangshen 的薪水排名，最少</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> zrank salary zangzang <span class="token comment"># 显示 xiaohong 的薪水排名，第三</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token comment"># ===================================================</span>
+<span class="token comment"># zrevrank 返回有序集中成员的排名。其中有序集成员按分数值递减(从大到小)排序。</span>
+<span class="token comment"># ===================================================</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZREVRANK salary zangzang <span class="token comment"># 臧臧第三</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>></span> ZREVRANK salary xiaohong <span class="token comment"># 小红第一</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span class='pbg red'>和set相比，sorted set增加了一个权重参数score，使得集合中的元素能够按score进行有序排列，比如 一个存储全班同学成绩的sorted set，其集合value可以是同学的学号，而score就可以是其考试得分， 这样在数据插入集合的时候，就已经进行了天然的排序。可以用sorted set来做带权重的队列，比如普 通消息的score为1，重要消息的score为2，然后工作线程可以选择按score的倒序来获取工作任务。让 重要的任务优先执行。 排行榜应用，取TOP N操作 ！</span>
 
 
 
