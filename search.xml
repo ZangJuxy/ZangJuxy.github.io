@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>信道的极限容量</title>
+      <link href="/2021/11/05/%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F/"/>
+      <url>/2021/11/05/%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 class="bamboo-h red" id="信道的极限容量">信道的极限容量</h2><br/><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105110949561.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105110949561.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105110949561"></p><blockquote><p>造成失真的因素有：</p><p>1、码元传输速率</p><p>2、噪声干扰</p><p>3、信号传输距离</p><p>4、传输媒体质量</p></blockquote><h3 class="bamboo-h green" id="奈氏准则">奈氏准则</h3><br/><span class='pbg yellow'>奈氏准则</span>：在假定的理想条件下,**为了避免码间串扰，码元传输速率是有上限的**<p>理想低通信道的最高码元传输速率=2W Baud =2W 码元/秒</p><p>理想带通信道的最高码元传输速率=W Baud =W 码元/秒</p><p>​        W：信道带宽（单位为Hz）</p><p>​        Baud：波特，即码元/秒</p><emp>码元传输速率又称为波特率、调制速率、波形速率或符号速率，他与比特率有一定关系；</emp>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>编码与调制</title>
+      <link href="/2021/11/05/%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6/"/>
+      <url>/2021/11/05/%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6/</url>
+      
+        <content type="html"><![CDATA[<h2 class="bamboo-h red" id="常用编码">常用编码</h2><br/><span class='pbg yellow'>不归零编码</span><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105094430771.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105094430771.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105094430771"></p><p>这种有一个问题，他要怎么才能判断接收的这是两个码元呢</p><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105094533918.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105094533918.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105094533918"></p><p>需要<strong>额外的一根传输线来传输时钟信号</strong>，使发送方和接收方同步，对于计算机网络，宁愿利用这根传输线传输数据信号，而不是传输时钟信号！</p><p>因此不归零编码存在同步问题所以我们计算机网络中的数据传输不采用这类编码</p><span class='pbg yellow'>归零编码</span><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105095157120.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105095157120.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105095157120"></p><p><strong>很明显每个码元传输结束后信号都要归零</strong>，所以接收方只要在信号归零后进行采样即可，不需要单独的时钟信号，实际上，归零编码相当于把时钟信号归零编码在了数据之内，这成为<strong>自同步</strong>信号。</p><blockquote><p>但是，归零编码中大部分的数据带宽，都用来传输归零而浪费掉了，优点是自同步，缺点是编码效率低</p></blockquote><span class='pbg yello'>曼彻斯特编码</span><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105100817317.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105100817317.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105100817317"></p><p>负跳变表示比特1，正跳变表示比特0，<strong>码元中间时刻的跳变即表示时钟，又表示数据</strong></p><span class='pbg yello'>差分曼彻斯特编码</span><p>这个画图就是比特1发生变化，比特0不发生变化,</p><blockquote><p>1.跳变仅代表时钟；</p><p>2.码元开始处电平是否发生变化表示数据。</p></blockquote><p>练习题：</p><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105102721260.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105102721260.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105102721260"></p><p>10代表10M每秒，Base表示基带传输，T表示双绞线。</p><blockquote><p>10BaseT以太网使用的是曼彻斯特编码;</p><p>每个码元在中间时刻跳变，按此特点找出每个码元，所以选A</p></blockquote><h2 class="bamboo-h red" id="基本调制方法">基本调制方法</h2><br/><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105103555296.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105103555296.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105103555296"></p><p>如何能使一个码元包含更多的比特呢</p><span class='pbg yello'>混合调制</span><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105110116596.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105110116596.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105110116596"></p><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105110135696.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105110135696.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105110135696"></p><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105110337028.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211105110337028.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105110337028"></p><div class="site-card-group"><a class="site-card" href="https://zangblog.gitee.io/"><div class="img"><img src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info"><img src="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">臧臧</span><span class="desc">勿在浮沙筑高楼</span></div></a></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>万金油Redis-5大基本数据类型</title>
       <link href="/2021/11/02/%E4%B8%87%E9%87%91%E6%B2%B9Redis-5%E5%A4%A7%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
       <url>/2021/11/02/%E4%B8%87%E9%87%91%E6%B2%B9Redis-5%E5%A4%A7%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
