@@ -710,11 +710,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> Words: 1.6k |
+            <i class="fas fa-file-text-o"></i> Words: 2.4k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> Reading time: 5min |
+            <i class="fas fa-clock"></i> Reading time: 8min |
           </span>
   
           
@@ -819,6 +819,75 @@
 <li>在计算机网络中通常采用我们后续课程中将要讨论的<strong>检错重传方式来纠正传输中的差错,或者仅仅是丢弃检测到差错的帧</strong>，这取决于数据链路层向其上层提供的是可靠传输服务还是不可靠传输服务。</li>
 </ul>
 <h2 class="bamboo-h red" id="可靠传输">可靠传输</h2><br/>
+
+<p>使用<span class='p warning'>差错检测技术</span>(例如循环冗余校验CRC)，接收方的数据链路层就可检测出帧才传输过程中是否产生了<span class='p warning'>误码</span>(比特错误)</p>
+<p>数据链路层向上层提供的服务类型</p>
+<ul>
+<li><span class='p warning'>不可靠传输服务：仅仅丢弃有误码的帧</span>，其他什么也不做；</li>
+<li><span class='p warning'>可靠传输服务：</span>想办法实现<span class='p warning'>发送端发送什么，接收端就收到什么</span></li>
+</ul>
+<p>一般情况下，<span class='p warning'>有限链路</span>的误码率比较低，为了减小开销，并<span class='p warning'>不要求数据链路层</span>向上提供<span class='p warning'>可靠</span>传输服务。即使出现了误码，可靠传输的问题由其上层处理。</p>
+<span class='p warning'>无线链路</span>易受干扰，误码率比较高，因此<span class='p warning'>要求数据链路层</span>必须向上层提供<span class='p warning'>可靠</span>传输服务。
+
+<span class='p warning'>比特差错</span>只是传输差错中的一种。
+
+<p>从整个计算机网络体系结构来看，传输差错还包括<span class='p warning'>分组丢失、分组失序</span>以及<span class='p warning'>分组重复</span>。</p>
+<blockquote>
+<p>分组丢失：假如h1主机向h2主机发送一条数据经过r5路由器时，r5路由器输入队列已将要满了主动丢弃收到的分组</p>
+<p>分组失序：主机h1依次给主机h2发送三个分组这个三个文组通过不同路径到达h2，此时顺序可能有变化，这就是分组失序</p>
+<p>分组重复：主机h1向h2发送一个数据，但是在中途滞留了，没有及时到达h2，这可能造成h1超时重发，但是重发的分组到h2之后，滞留的那个分组也到达了，这就造成了分组重复</p>
+</blockquote>
+<h2 class="bamboo-h red" id="点对点协议PPP">点对点协议PPP</h2><br/>
+
+<p>点对点协议PPP是目前使用最广泛的点对点数据链路层协议</p>
+<p>PPP协议是因特网工程任务组IETF在1992年制定的。经过1993年和1994年的修订，现在的PPP协议已成为因特网的正式标准[RFC1661,RFC1662]。</p>
+<ul>
+<li>对各种协议数据报的封装方法(封装成帧)</li>
+<li>链路控制协议LCP   用于建立、配置以及测试数据链路的链接</li>
+<li>一套网络控制协议NCPs   其中的每一个协议支持不同的网络层协议</li>
+</ul>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107100902992.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107100902992.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107100902992"></p>
+<span class='p red'>帧格式</span>
+
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107102151535.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107102151535.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107102151535"></p>
+<p>标志(<strong>F</strong>lag)字段:PPP帧的定界符，取值为0x7E</p>
+<p>地址(<strong>A</strong>ddress)字段:取值0xFF，预留(目前没什么用)</p>
+<p>控制(<strong>C</strong>ontrol)字段:取值为0x03，预留（目前没有什么作用)</p>
+<p>协议(<strong>P</strong>rotocol)字段:指明帧的数据部分送交哪个协议处理</p>
+<ul>
+<li>取值0x0021表示：帧的数据部分为IP数据报</li>
+</ul>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107102716393.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107102716393.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107102716393"></p>
+<ul>
+<li>取值0xC021表示：帧的数据部分为LCP分组</li>
+</ul>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107102756399.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107102756399.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107102756399"></p>
+<ul>
+<li>取值0x8021表示：帧的数据部分为NCP分组</li>
+</ul>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107102910112.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107102910112.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107102910112"></p>
+<ul>
+<li>帧检验序列字段：CRC计算出的校验位</li>
+</ul>
+<h3 class="bamboo-h red" id="透明传输">透明传输</h3><br/>
+
+<p>实现透明传输的方法</p>
+<p>​    PPP协议实现透明传输的方法取决于所使用的链路类型</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107103421435.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107103421435.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107103421435"></p>
+<span class='p red'>面向字节的异步链路采用插入转义字符的字节填充法</span>
+
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107111131734.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107111131734.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107111131734"></p>
+<p>接收方处理只要进行反变换即可恢复出原来的帧的数据部分</p>
+<span class='p red'>面向比特的同步链路采用插入比特0的比特填充法</span>
+
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107112826307.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107112826307.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107112826307"></p>
+<span class='p red'>差错检测</span>
+
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107113123690.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107113123690.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107113123690"></p>
+<span class='p red'>工作状态</span>
+
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107114435840.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211107114435840.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107114435840"></p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -1328,7 +1397,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/zangzang">zangzag</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">ZangBlog</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Zang</a> </p>
+            <p>Copyright © 2019 - 2021 <a target="_blank" rel="noopener" href="https://github.com/zangzang">zangzag</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">ZangBlog</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Zang</a> </p>
 
           </div>
         
