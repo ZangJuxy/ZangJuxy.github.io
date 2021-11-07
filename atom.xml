@@ -6,7 +6,7 @@
   <link href="https://zangblog.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://zangblog.gitee.io/"/>
-  <updated>2021-11-07T03:47:19.199Z</updated>
+  <updated>2021-11-07T13:18:39.720Z</updated>
   <id>https://zangblog.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>媒体接入控制</title>
+    <link href="https://zangblog.gitee.io/2021/11/07/%E5%AA%92%E4%BD%93%E6%8E%A5%E5%85%A5%E6%8E%A7%E5%88%B6/"/>
+    <id>https://zangblog.gitee.io/2021/11/07/%E5%AA%92%E4%BD%93%E6%8E%A5%E5%85%A5%E6%8E%A7%E5%88%B6/</id>
+    <published>2021-11-07T09:20:10.000Z</published>
+    <updated>2021-11-07T13:18:39.720Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 class=&quot;bamboo-h red&quot; id=&quot;静态划分信道&quot;&gt;静态划分信道&lt;/h2&gt;&lt;br/&gt;
+
+&lt;h3 class=&quot;bamboo-h warning&quot; id=&quot;信道复用&quot;&gt;信道复用&lt;/h3&gt;&lt;br/&gt;
+
+&lt;p&gt;频分复用FDM&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://zangblog.gitee.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://zangblog.gitee.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>数据链路层</title>
@@ -499,31 +529,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;事务回顾&quot;&gt;&lt;a href=&quot;#事务回顾&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="SSM" scheme="https://zangblog.gitee.io/categories/SSM/"/>
-    
-    
-    <category term="Spring5" scheme="https://zangblog.gitee.io/tags/Spring5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>整合Mybatis</title>
-    <link href="https://zangblog.gitee.io/2021/09/24/%E6%95%B4%E5%90%88Mybatis/"/>
-    <id>https://zangblog.gitee.io/2021/09/24/%E6%95%B4%E5%90%88Mybatis/</id>
-    <published>2021-09-24T02:48:01.000Z</published>
-    <updated>2021-09-25T12:53:21.039Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Spring集成mybatis&quot;&gt;&lt;a href=&quot;#Spring集成mybatis&quot; class=&quot;headerlink&quot; title=&quot;Spring集成mybatis&quot;&gt;&lt;/a&gt;Spring集成mybatis&lt;/h2&gt;&lt;h3 id=&quot;1、创建实体类&quot;&gt;&lt;a</summary>
         
       
     
