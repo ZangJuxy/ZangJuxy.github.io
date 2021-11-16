@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>“基础环境搭建”</title>
-      <link href="/2021/11/16/%E2%80%9C%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E2%80%9D/"/>
-      <url>/2021/11/16/%E2%80%9C%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E2%80%9D/</url>
-      
-        <content type="html"><![CDATA[<p>实体类</p><p>用户</p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>zang<span class="token punctuation">.</span>pojo</span><span class="token punctuation">;</span><span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">AllArgsConstructor</span><span class="token punctuation">;</span><span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Data</span><span class="token punctuation">;</span><span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">NoArgsConstructor</span><span class="token punctuation">;</span><span class="token annotation punctuation">@Data</span><span class="token annotation punctuation">@AllArgsConstructor</span><span class="token annotation punctuation">@NoArgsConstructor</span><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">private</span> <span class="token class-name">String</span> id<span class="token punctuation">;</span>    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>书籍</p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>zang<span class="token punctuation">.</span>pojo</span><span class="token punctuation">;</span><span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">AllArgsConstructor</span><span class="token punctuation">;</span><span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Data</span><span class="token punctuation">;</span><span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">NoArgsConstructor</span><span class="token punctuation">;</span><span class="token annotation punctuation">@Data</span><span class="token annotation punctuation">@NoArgsConstructor</span><span class="token annotation punctuation">@AllArgsConstructor</span><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Book</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">private</span> <span class="token keyword">int</span> bookID<span class="token punctuation">;</span>    <span class="token keyword">private</span> <span class="token class-name">String</span> bookName<span class="token punctuation">;</span>    <span class="token keyword">private</span> <span class="token keyword">int</span> bookCounts<span class="token punctuation">;</span>    <span class="token keyword">private</span> <span class="token class-name">String</span> detail<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> springboot </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Thymeleaf表达式</title>
       <link href="/2021/11/12/Thymeleaf%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
       <url>/2021/11/12/Thymeleaf%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
