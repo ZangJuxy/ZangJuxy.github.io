@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zangblog.gitee.io/2021/11/16/%E2%80%9C%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E2%80%9D/</loc>
+    <lastmod>2021-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://zangblog.gitee.io/2021/11/12/Thymeleaf%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2021-11-13</lastmod>
+  </url>
+  <url>
     <loc>https://zangblog.gitee.io/2021/10/06/%E6%95%B4%E5%90%88SSM/</loc>
     <lastmod>2021-11-11</lastmod>
   </url>
@@ -39,18 +47,6 @@
   <url>
     <loc>https://zangblog.gitee.io/2021/08/02/algolia%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2021-10-30</lastmod>
-  </url>
-  <url>
-    <loc>https://zangblog.gitee.io/2021/10/27/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-10-28</lastmod>
-  </url>
-  <url>
-    <loc>https://zangblog.gitee.io/2021/10/28/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-3%E7%99%BB%E5%BD%95%E5%8F%8A%E6%8B%A6%E6%88%AA%E5%99%A8%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2021-10-28</lastmod>
-  </url>
-  <url>
-    <loc>https://zangblog.gitee.io/2021/10/28/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-2%E9%A6%96%E9%A1%B5%E5%9B%BD%E9%99%85%E5%8C%96%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2021-10-28</lastmod>
   </url>
   <url>
     <loc>https://zangblog.gitee.io/2021/10/24/%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</loc>

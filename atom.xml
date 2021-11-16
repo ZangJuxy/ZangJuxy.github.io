@@ -6,7 +6,7 @@
   <link href="https://zangblog.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://zangblog.gitee.io/"/>
-  <updated>2021-11-07T13:18:39.720Z</updated>
+  <updated>2021-11-16T14:24:35.388Z</updated>
   <id>https://zangblog.gitee.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>“基础环境搭建”</title>
+    <link href="https://zangblog.gitee.io/2021/11/16/%E2%80%9C%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E2%80%9D/"/>
+    <id>https://zangblog.gitee.io/2021/11/16/%E2%80%9C%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E2%80%9D/</id>
+    <published>2021-11-16T14:23:27.000Z</published>
+    <updated>2021-11-16T14:24:35.388Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;实体类&lt;/p&gt;
+&lt;p&gt;用户&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-java&quot; data-language=&quot;java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token</summary>
+        
+      
+    
+    
+    
+    
+    <category term="springboot" scheme="https://zangblog.gitee.io/tags/springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Thymeleaf表达式</title>
+    <link href="https://zangblog.gitee.io/2021/11/12/Thymeleaf%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://zangblog.gitee.io/2021/11/12/Thymeleaf%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
+    <published>2021-11-12T01:12:40.000Z</published>
+    <updated>2021-11-13T07:00:42.807Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 class=&quot;bamboo-h warning&quot; id=&quot;Thymeleaf关闭页面缓存&quot;&gt;Thymeleaf关闭页面缓存&lt;/h2&gt;&lt;br/&gt;
+
+&lt;p&gt;在Springboot的核心配置文件中设置关闭页面缓存&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="https://zangblog.gitee.io/categories/SpringBoot/"/>
+    
+    
+    <category term="Thymeleaf" scheme="https://zangblog.gitee.io/tags/Thymeleaf/"/>
+    
+  </entry>
   
   <entry>
     <title>媒体接入控制</title>
@@ -183,82 +236,6 @@
     
     
     <category term="Redis" scheme="https://zangblog.gitee.io/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从头开始的一个小项目-3登录及拦截器实现</title>
-    <link href="https://zangblog.gitee.io/2021/10/28/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-3%E7%99%BB%E5%BD%95%E5%8F%8A%E6%8B%A6%E6%88%AA%E5%99%A8%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://zangblog.gitee.io/2021/10/28/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-3%E7%99%BB%E5%BD%95%E5%8F%8A%E6%8B%A6%E6%88%AA%E5%99%A8%E5%AE%9E%E7%8E%B0/</id>
-    <published>2021-10-28T02:05:43.000Z</published>
-    <updated>2021-10-28T03:41:35.754Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;登录功能&quot;&gt;&lt;a href=&quot;#登录功能&quot; class=&quot;headerlink&quot; title=&quot;登录功能&quot;&gt;&lt;/a&gt;登录功能&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-java&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="SpringBoot" scheme="https://zangblog.gitee.io/categories/SpringBoot/"/>
-    
-    
-    <category term="SpringBoot" scheme="https://zangblog.gitee.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从头开始的一个小项目-2首页国际化实现</title>
-    <link href="https://zangblog.gitee.io/2021/10/28/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-2%E9%A6%96%E9%A1%B5%E5%9B%BD%E9%99%85%E5%8C%96%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://zangblog.gitee.io/2021/10/28/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-2%E9%A6%96%E9%A1%B5%E5%9B%BD%E9%99%85%E5%8C%96%E5%AE%9E%E7%8E%B0/</id>
-    <published>2021-10-28T00:31:54.000Z</published>
-    <updated>2021-10-28T01:59:33.279Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;页面国际化&quot;&gt;&lt;a href=&quot;#页面国际化&quot; class=&quot;headerlink&quot; title=&quot;页面国际化&quot;&gt;&lt;/a&gt;页面国际化&lt;/h2&gt;&lt;h3 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="SpringBoot" scheme="https://zangblog.gitee.io/categories/SpringBoot/"/>
-    
-    
-    <category term="SpringBoot" scheme="https://zangblog.gitee.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从头开始的一个小项目 1环境搭建</title>
-    <link href="https://zangblog.gitee.io/2021/10/27/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>https://zangblog.gitee.io/2021/10/27/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE-1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</id>
-    <published>2021-10-27T11:51:19.000Z</published>
-    <updated>2021-10-28T03:43:08.147Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;从今天开始我们自己写一个小程序练练手&lt;/p&gt;
-&lt;h2 id=&quot;1、创建springboot项目&quot;&gt;&lt;a href=&quot;#1、创建springboot项目&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="SpringWeb" scheme="https://zangblog.gitee.io/categories/SpringWeb/"/>
-    
-    
-    <category term="SpringWeb" scheme="https://zangblog.gitee.io/tags/SpringWeb/"/>
     
   </entry>
   
@@ -529,6 +506,31 @@
         
         
     <summary type="html">&lt;h2 id=&quot;事务回顾&quot;&gt;&lt;a href=&quot;#事务回顾&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SSM" scheme="https://zangblog.gitee.io/categories/SSM/"/>
+    
+    
+    <category term="Spring5" scheme="https://zangblog.gitee.io/tags/Spring5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>整合Mybatis</title>
+    <link href="https://zangblog.gitee.io/2021/09/24/%E6%95%B4%E5%90%88Mybatis/"/>
+    <id>https://zangblog.gitee.io/2021/09/24/%E6%95%B4%E5%90%88Mybatis/</id>
+    <published>2021-09-24T02:48:01.000Z</published>
+    <updated>2021-09-25T12:53:21.039Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Spring集成mybatis&quot;&gt;&lt;a href=&quot;#Spring集成mybatis&quot; class=&quot;headerlink&quot; title=&quot;Spring集成mybatis&quot;&gt;&lt;/a&gt;Spring集成mybatis&lt;/h2&gt;&lt;h3 id=&quot;1、创建实体类&quot;&gt;&lt;a</summary>
         
       
     
