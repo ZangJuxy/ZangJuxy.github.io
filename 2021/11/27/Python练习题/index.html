@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Thymeleaf表达式 | 臧臧</title>
+  <title>Python练习题 | 臧臧</title>
 
   <link rel="icon" type="image/jpeg" href="/medias/zz.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -678,43 +678,34 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-0cefa85f78f98647f175c949aa2b29d3_720w.jpg')">
+  background-position: center center;position: relative;background-image:url('https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0432a40b6ab749f8ae473d5c7e9ce12a.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        Thymeleaf表达式
+        Python练习题
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2021-11-12 |
+          <i class="fas fa-calendar"></i> Published in：2021-11-27 |
         </span>
       
 
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> category：
-          
-            <a href="/categories/SpringBoot/" class="post-detail-header_category">
-              SpringBoot
-            </a>
-          
-        </span>
       
 
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> Words: 339 |
+            <i class="fas fa-file-text-o"></i> Words: 3.3k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> Reading time: 1min |
+            <i class="fas fa-clock"></i> Reading time: 12min |
           </span>
   
           
@@ -738,50 +729,339 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 class="bamboo-h warning" id="Thymeleaf关闭页面缓存">Thymeleaf关闭页面缓存</h2><br/>
+        <h2 class="bamboo-h red" id="Python顺序结构之内置函数实现计算器之二-十六进制转换">Python顺序结构之内置函数实现计算器之二-十六进制转换</h2><br/>
 
-<p>在Springboot的核心配置文件中设置关闭页面缓存</p>
-<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token attr-name">spring.thymeleaf.cache</span><span class="token punctuation">=</span><span class="token attr-value">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""程序代码
+任务：现在分别有一个二进制数和十六进制数，二进制数为0b1110，十六进制数为0x2b，
+请将二进制数转换为十六进制，十六进制数转换为二进制。
+格式化输出格式为：
+"二进制-十六进制结果为：change2_16"
+"十六进制-二进制结果为：change16_2"
+"""</span>
 
-<p>然后还要设置一下</p>
-<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211112093102074.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211112093102074.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211112093102074"></p>
-<h2 class="bamboo-h warning" id="Thymeleaf标准变量和选择变量表达式">Thymeleaf标准变量和选择变量表达式</h2><br/>
+num2 <span class="token operator">=</span> <span class="token number">0b1110</span>     <span class="token comment"># 变量num2的值为二进制数 </span>
+num16 <span class="token operator">=</span> <span class="token number">0x2b</span>     <span class="token comment"># 变量num16的值为十六进制数 </span>
 
-<p>我们进行一下测试在controller层创建一个对象然后给3个值，在放入model中在页面中取出可以这样</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$&#123;user.name&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+ 
+<span class="token comment">#请在下面的Begin-End之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">########### Begin ###########</span>
+<span class="token comment"># 第1步：将二进制转换成十六进制的结果赋值给change2_16</span>
+change2_16 <span class="token operator">=</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span>
+<span class="token comment"># 第2步：将十六进制转换成二进制的结果赋值给change16_2</span>
+change16_2 <span class="token operator">=</span> <span class="token builtin">bin</span><span class="token punctuation">(</span>num16<span class="token punctuation">)</span>
+<span class="token comment"># 第3步：按照格式化输出要求打印出两个转换后的结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"二进制-十六进制结果为：%s"</span><span class="token operator">%</span><span class="token punctuation">(</span>change2_16<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"十六进制-二进制结果为：&#123;&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>change16_2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">########### End ###########</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>也可以使用在div中这样使用</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name"><span class="token namespace">th:</span>object</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$&#123;user&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>*&#123;age&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 class="bamboo-h red" id="Python顺序结构之内置函数实现计算器之八-十六进制转换">Python顺序结构之内置函数实现计算器之八-十六进制转换</h2><br/>
 
-<blockquote>
-<p>*{}必须使用th:object属性来绑定这个对象</p>
-<p>在div子标签中使用*来代替绑定的对象${user}</p>
-</blockquote>
-<h2 class="bamboo-h warning" id="Thymeleaf路径表达式">Thymeleaf路径表达式</h2><br/>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""程序代码
+任务：现在分别有一个八进制数和十六进制数，八进制数为0o16，十六进制数为0x1e，
+请将八进制数转换为十六进制，十六进制数转换为八进制。
+格式化输出格式为：
+'''
+八进制-十六进制结果为：change8_16
+十六进制-八进制结果为：change16_8
+'''
+"""</span>
 
-<h3 class="bamboo-h yello" id="Thymeleaf路径表达式1">Thymeleaf路径表达式1</h3><br/>
+num8 <span class="token operator">=</span> <span class="token number">0o16</span>     <span class="token comment"># 变量num8值为一个八进制数</span>
+num16 <span class="token operator">=</span> <span class="token number">0x2b</span>     <span class="token comment"># 变量num16值为一个十六进制数 </span>
 
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>th</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.thymeleaf.org<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>URL表达式<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>URL路径表达式：@&#123;...&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>a标签中的绝对路径(没有参数)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.baidu.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>传统写法跳转到百度<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;http://www.baidu.com&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>路径表达式：跳转到百度<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;http://localhost:8080/a&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>跳转到/a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+ 
+<span class="token comment">#请在下面的Begin-End之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">########### Begin ###########</span>
+<span class="token comment"># 第1步：将八进制转换成十六进制的结果赋值给change8_16</span>
+change8_16<span class="token operator">=</span><span class="token builtin">hex</span><span class="token punctuation">(</span>num8<span class="token punctuation">)</span>
+<span class="token comment"># 第2步：将十六进制转换成八进制的结果赋值给change16_8</span>
+change16_8<span class="token operator">=</span><span class="token builtin">oct</span><span class="token punctuation">(</span>num16<span class="token punctuation">)</span>
+<span class="token comment"># 第3步：按照格式化输出要求打印出两个转换后的结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"八进制-十六进制结果为：%s"</span><span class="token operator">%</span><span class="token punctuation">(</span>change8_16<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"十六进制-八进制结果为：%s"</span><span class="token operator">%</span><span class="token punctuation">(</span>change16_8<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">########### End ###########</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>URL路径表达式，相对路径[没有参数](实际开发中推荐使用的)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;/a&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>跳转到/a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 class="bamboo-h red" id="Python顺序结构之内置函数实现不同进制数间比大小">Python顺序结构之内置函数实现不同进制数间比大小</h2><br/>
 
-<h3 class="bamboo-h yello" id="Thymeleaf路径表达式2">Thymeleaf路径表达式2</h3><br/>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""
+任务：使用 max 函数得到两个数中的较大者并输出，这两个数通过 input 获取，第一个为二进制数，第二个为十六进制数。
+"""</span>
+ 
+<span class="token comment">#请在下面的Begin-End之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">##########Begin##########</span>
+<span class="token comment"># 使用 max 函数得到两个数中的较大者并输出</span>
+num1 <span class="token operator">=</span> <span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+num2 <span class="token operator">=</span> <span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">##########End##########</span>
+result <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span>num2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""
+任务：使用 max 函数得到两个数中的较大者并输出，这两个数通过 input 获取，第一个为二进制数，第二个为十六进制数。
+"""</span>
+ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""程序代码
+任务：一小球以 5米/秒 的水平速度平抛，重力加速度取9.8米/秒2，在忽略空气阻力的情况下，求
+经过时间 t 秒后(t 是获取的输入值)，小球所在位置与抛出点之间的距离 (假设小球距地面足够高)。
+格式化输出格式为："经过t秒后，小球与原点的距离为d米"
+"""</span>
+
+G <span class="token operator">=</span> <span class="token number">9.8</span>     <span class="token comment"># 声明浮点型变量 G，用于表示重力加速度</span>
+v0 <span class="token operator">=</span> <span class="token number">5</span>      <span class="token comment"># 声明整型变量 v0, 用于表示水平初速度</span>
+
+
+<span class="token comment">#请在下面的Begin-End之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">########### Begin ###########</span>
+<span class="token comment"># 第一步：通过 input 函数获取输入值，将其转换为浮点型并赋值给t</span>
+t<span class="token operator">=</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 第二步：计算水平距离，并赋值给s</span>
+s<span class="token operator">=</span>t<span class="token operator">*</span>v0
+<span class="token comment"># 第三步：计算垂直距离，并赋值给h</span>
+h<span class="token operator">=</span><span class="token punctuation">(</span>G<span class="token operator">*</span>t<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span>
+<span class="token comment"># 第四步：计算小球与原点的距离，并赋值给d</span>
+d<span class="token operator">=</span><span class="token punctuation">(</span>s<span class="token operator">**</span><span class="token number">2</span><span class="token operator">+</span>h<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">0.5</span>
+<span class="token comment"># 第五步：按照格式化输出要求，打印出小球与原点的距离d</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"经过%.6f秒后，小球与原点的距离为%.6f米"</span><span class="token operator">%</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">########### End ###########</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 class="bamboo-h red" id="Python顺序结构之数学函数一">Python顺序结构之数学函数一</h2><br/>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""程序代码
+任务：已知直角三角形的斜边计算公式，其中邻边 x 和 y 我们通过键盘输入获取，且都为整型。请使用 math 库中的函数来求斜边 d 的值。
+"""</span>
+
+<span class="token comment">#请在下面的Begin-End之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">########### Begin ###########</span>
+<span class="token comment"># 第1步：导入Python中的模块math</span>
+<span class="token keyword">import</span> math <span class="token keyword">as</span> a
+<span class="token comment"># 第2步：使用input获取输入值赋值给x</span>
+x<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 第3步：使用input获取输入值赋值给y</span>
+y<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 第4步：使用math中的数学函数计算斜边长，将结果赋值给d</span>
+d <span class="token operator">=</span> a<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>x<span class="token operator">*</span>x<span class="token operator">+</span>y<span class="token operator">*</span>y<span class="token punctuation">)</span>
+<span class="token comment"># 第5步：打印出斜边长的值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+<span class="token comment">########### End ###########</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 class="bamboo-h red" id="Python顺序结构之数学函数二">Python顺序结构之数学函数二</h2><br/>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""
+任务：使用 math 模块的数学函数来计算半径为 R 的球体的体积，R 使用 input 函数获取，数据类型为整型。
+"""</span>
+<span class="token comment"># 请在下面的Begin-End之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">########### Begin ###########</span>
+<span class="token comment"># 第1步：导入math模块</span>
+<span class="token keyword">import</span> math <span class="token keyword">as</span> m
+<span class="token comment"># 第2步：使用input函数获取球体的半径赋值给R</span>
+R <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 第3步：计算球体的体积，将结果赋值给result</span>
+V <span class="token operator">=</span> <span class="token number">4</span><span class="token operator">/</span><span class="token number">3</span><span class="token operator">*</span>m<span class="token punctuation">.</span>pi<span class="token operator">*</span>R<span class="token operator">**</span><span class="token number">3</span>
+<span class="token comment"># 第4步：打印出球体的体积，结果四舍五入后保留 5 位小数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%.5f"</span><span class="token operator">%</span> V<span class="token punctuation">)</span>
+<span class="token comment">########### End ##########</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 class="bamboo-h red" id="Python列表之列表应用之降序排序">Python列表之列表应用之降序排序</h2><br/>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""
+任务：给定一个列表，使用 for 循环来复制它，对复制后的列表进行倒序排序。打印原列表和排序后的列表。
+"""</span>
+
+list1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">131</span><span class="token punctuation">,</span><span class="token number">58</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">581</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">46</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">613</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">546</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">68</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span><span class="token number">61</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">102</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">290</span><span class="token punctuation">,</span><span class="token number">116.5</span><span class="token punctuation">,</span><span class="token number">165</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">2.3</span><span class="token punctuation">]</span>
+ 
+<span class="token comment"># 请在下面的Begin-End之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">##########Begin##########</span>
+<span class="token comment"># 使用for循环复制列表，对复制后的列表进行倒序排序，并打印原列表和排序后的列表</span>
+list2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"原列表为：%s"</span> <span class="token operator">%</span>list1<span class="token punctuation">)</span>
+
+list2 <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>list1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+list2<span class="token punctuation">.</span>reverse<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"复制后的列表为：%s"</span> <span class="token operator">%</span>list2<span class="token punctuation">)</span>
+
+
+
+
+
+ 
+<span class="token comment">##########End##########</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 class="bamboo-h red" id="Python列表之复制与拷贝">Python列表之复制与拷贝</h2><br/>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> copy
+
+
+list1 <span class="token operator">=</span> <span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment"># 获取列表</span>
+
+<span class="token comment"># 请在下面的Begin-End之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">########## Begin ##########</span>
+<span class="token comment"># 使用所学的拷贝来完成本关任务，打印删除指定元素后的列表</span>
+list2<span class="token operator">=</span>copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>list1<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> list2<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">3</span><span class="token punctuation">:</span>
+        list2<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span>
+<span class="token comment">########## End ##########</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 class="bamboo-h red" id="Python列表之复制与拷贝2">Python列表之复制与拷贝2</h2><br/>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> copy
+<span class="token comment"># 请在下面的 Begin-End 之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">########## Begin ##########</span>
+<span class="token comment"># 第1步：使用 input 函数获取列表</span>
+list1<span class="token operator">=</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 第2步：去除列表内的非重复值，打印处理后的列表</span>
+list2<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> list1<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> list1<span class="token punctuation">.</span>count<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">1</span><span class="token punctuation">:</span>
+        list2<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span>
+<span class="token comment">########## End ##########</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 class="bamboo-h red" id="Python列表之应用">Python列表之应用</h2><br/>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+list1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">88</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">61</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">51</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">984</span><span class="token punctuation">,</span><span class="token number">9849</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">513</span><span class="token punctuation">,</span><span class="token number">891</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">48</span><span class="token punctuation">,</span><span class="token number">465</span><span class="token punctuation">,</span><span class="token number">132</span><span class="token punctuation">,</span><span class="token number">165</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">132</span><span class="token punctuation">,</span><span class="token number">498</span><span class="token punctuation">,</span><span class="token number">46</span><span class="token punctuation">,</span><span class="token number">132</span><span class="token punctuation">,</span><span class="token number">165</span><span class="token punctuation">,</span><span class="token number">468</span><span class="token punctuation">,</span><span class="token number">498</span><span class="token punctuation">,</span><span class="token number">484</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">84</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">132</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">,</span><span class="token number">684</span><span class="token punctuation">,</span><span class="token number">6981</span><span class="token punctuation">,</span><span class="token number">324</span><span class="token punctuation">,</span><span class="token number">984</span><span class="token punctuation">,</span><span class="token number">61</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">468</span><span class="token punctuation">,</span><span class="token number">4651</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">9814</span><span class="token punctuation">,</span><span class="token number">654</span><span class="token punctuation">,</span><span class="token number">984</span><span class="token punctuation">,</span><span class="token number">68</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">]</span>
+ 
+<span class="token comment"># 请在下面的Begin-End之间按照注释中给出的提示编写正确的代码</span>
+<span class="token comment">##########Begin##########</span>
+<span class="token comment"># 使用 for 循环复制这个数组，然后去除列表内的重复元素，最后对列表进行排序。打印去重且排序后的复制列表</span>
+list2<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> list1<span class="token punctuation">:</span>
+    list2<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+list2<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+list2<span class="token operator">=</span>np<span class="token punctuation">.</span>unique<span class="token punctuation">(</span>list2<span class="token punctuation">)</span>
+list2<span class="token operator">=</span>list2<span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span>
+<span class="token comment">##########End##########</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
+
+<h2 class="bamboo-h red" id="Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离">Python顺序结构之有输入格式化输出平抛小球与抛出点之间的距离</h2><br/>
 
 
       </div>
@@ -789,8 +1069,8 @@
         
         <div class="tags">
           
-            <a href="/tags/Thymeleaf/" class="">
-              Thymeleaf
+            <a href="/tags/Python/" class="">
+              Python
             </a>
           
         </div>
@@ -804,7 +1084,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/11/12/Thymeleaf表达式/" target="_blank" title="Thymeleaf表达式">https://zangblog.gitee.io/2021/11/12/Thymeleaf表达式/</a>
+    <a href="/2021/11/27/Python练习题/" target="_blank" title="Python练习题">https://zangblog.gitee.io/2021/11/27/Python练习题/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -822,52 +1102,24 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0432a40b6ab749f8ae473d5c7e9ce12a.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/0432a40b6ab749f8ae473d5c7e9ce12a.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/2021/11/27/Python%E7%BB%83%E4%B9%A0%E9%A2%98/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">Python练习题</div>
-      </div>
-      
-      <!-- <div class="content">
-        Python顺序结构之内置函数实现计算器之二-十六进制转换
-
-"""程序代码
-任务：现在分别有一个二进制数和十六进制数，
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-1d8f727fc0a0e9ca4d289c2b09aefa29_720w.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-1d8f727fc0a0e9ca4d289c2b09aefa29_720w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-0cefa85f78f98647f175c949aa2b29d3_720w.jpg" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/v2-0cefa85f78f98647f175c949aa2b29d3_720w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2021/11/07/%E5%AA%92%E4%BD%93%E6%8E%A5%E5%85%A5%E6%8E%A7%E5%88%B6/" class="post-nav-link">
+    <a href="/2021/11/12/Thymeleaf%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">媒体接入控制</div>
+        <div class="title-text">Thymeleaf表达式</div>
       </div>
       <!-- <div class="content">
-        静态划分信道
+        Thymeleaf关闭页面缓存
 
-信道复用
-
-频分复用FDM
-
-时分复用TDM
-有点类似单核模拟多线程
-
-波分复用WDM
-其实就是光的频分
+在Springboot的核心配置文件中设置关闭页面缓存
+spring.thymelea
       </div> -->
     </a>
   </div>

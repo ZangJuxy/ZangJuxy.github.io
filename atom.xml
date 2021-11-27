@@ -6,7 +6,7 @@
   <link href="https://zangblog.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://zangblog.gitee.io/"/>
-  <updated>2021-11-13T07:00:42.807Z</updated>
+  <updated>2021-11-27T00:49:04.543Z</updated>
   <id>https://zangblog.gitee.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python练习题</title>
+    <link href="https://zangblog.gitee.io/2021/11/27/Python%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    <id>https://zangblog.gitee.io/2021/11/27/Python%E7%BB%83%E4%B9%A0%E9%A2%98/</id>
+    <published>2021-11-27T00:36:42.000Z</published>
+    <updated>2021-11-27T00:49:04.543Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 class=&quot;bamboo-h red&quot; id=&quot;Python顺序结构之内置函数实现计算器之二-十六进制转换&quot;&gt;Python顺序结构之内置函数实现计算器之二-十六进制转换&lt;/h2&gt;&lt;br/&gt;
+
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Python" scheme="https://zangblog.gitee.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Thymeleaf表达式</title>
@@ -506,31 +531,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;Spring集成mybatis&quot;&gt;&lt;a href=&quot;#Spring集成mybatis&quot; class=&quot;headerlink&quot; title=&quot;Spring集成mybatis&quot;&gt;&lt;/a&gt;Spring集成mybatis&lt;/h2&gt;&lt;h3 id=&quot;1、创建实体类&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="SSM" scheme="https://zangblog.gitee.io/categories/SSM/"/>
-    
-    
-    <category term="Spring5" scheme="https://zangblog.gitee.io/tags/Spring5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>aspectJ基于注解的AOP实现(重点)</title>
-    <link href="https://zangblog.gitee.io/2021/09/19/aspectJ%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E5%AE%9E%E7%8E%B0-%E9%87%8D%E7%82%B9/"/>
-    <id>https://zangblog.gitee.io/2021/09/19/aspectJ%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E5%AE%9E%E7%8E%B0-%E9%87%8D%E7%82%B9/</id>
-    <published>2021-09-19T10:51:15.000Z</published>
-    <updated>2021-09-19T12:27:56.230Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1、-AfterReturning后置通知&quot;&gt;&lt;a href=&quot;#1、-AfterReturning后置通知&quot; class=&quot;headerlink&quot;</summary>
         
       
     

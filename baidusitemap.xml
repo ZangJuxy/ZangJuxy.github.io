@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zangblog.gitee.io/2021/11/27/Python%E7%BB%83%E4%B9%A0%E9%A2%98/</loc>
+    <lastmod>2021-11-27</lastmod>
+  </url>
+  <url>
     <loc>https://zangblog.gitee.io/2021/11/12/Thymeleaf%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
     <lastmod>2021-11-13</lastmod>
   </url>
