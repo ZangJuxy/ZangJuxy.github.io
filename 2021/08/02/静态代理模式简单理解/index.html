@@ -710,7 +710,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> Words: 292 |
+            <i class="fas fa-file-text-o"></i> Words: 494 |
           </span>
   
           <span class="min2read">
@@ -738,45 +738,85 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><ul>
-<li>所谓静态代理模式，简单来说就是<ul>
-<li>一般你需要用你的王者号登陆打排位上分以及领奖励，但是静态代理就是，你把你的号给了一个代练，代练知道你的账号密码然后给你打排位领奖励就是这个意思<h3 id="写一个简单实例"><a href="#写一个简单实例" class="headerlink" title="写一个简单实例"></a>写一个简单实例</h3></li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Staticwzry</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">Boss</span> you <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boss</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">//把真实对象传给代理</span>
-        <span class="token class-name">BlackSlaves</span> blackSlaves <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BlackSlaves</span><span class="token punctuation">(</span>you<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        blackSlaves<span class="token punctuation">.</span><span class="token function">loading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//一个登录信息的接口</span>
-<span class="token keyword">interface</span> information<span class="token punctuation">&#123;</span>
-    <span class="token keyword">void</span> <span class="token function">loading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//创建一个老板类，老板只需要进行登录账号就可</span>
-<span class="token keyword">class</span> <span class="token class-name">Boss</span> <span class="token keyword">implements</span> information<span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loading</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"账号密码登录"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//创建一个黑奴类，需要知道老板账号密码进行登录并且代练</span>
-<span class="token keyword">class</span> <span class="token class-name">BlackSlaves</span> <span class="token keyword">implements</span> information <span class="token punctuation">&#123;</span>
-    <span class="token keyword">private</span> information boss<span class="token punctuation">;</span>
-    <span class="token comment">//有参构造方法，将老板传给黑奴</span>
-    <span class="token keyword">public</span> <span class="token class-name">BlackSlaves</span><span class="token punctuation">(</span>information boss<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>boss <span class="token operator">=</span> boss<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loading</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>boss<span class="token punctuation">.</span><span class="token function">loading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"打排位，领奖励"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <h2 class="bamboo-h red" id="Java23种设计模式之一静态代理">Java23种设计模式之一静态代理</h2><br/>
 
+<p>首先我们要明白为什么要学习静态代理，因为在spring中的AOP底层就是动态代理，而我们只有明白了静态代理和反射的原理之后才能真正的明白动态代理，这篇文章就先为大家讲解一下静态代理。</p>
+<ol>
+<li><p>静态代理是什么东西呢简单来说就是我们的真实角色更加纯粹了，不需要去关注一些公共的事情了</p>
+</li>
+<li><p>公司的业务由代理来完成，实现了业务的分工</p>
+</li>
+</ol>
+<h3 class="bamboo-h yello" id="例一">例一</h3><br/>
+
+<h3 id="写一个简单实例"><a href="#写一个简单实例" class="headerlink" title="写一个简单实例"></a>写一个简单实例</h3><p>结婚为例</p>
+<h4 id="抽象方法-结婚"><a href="#抽象方法-结婚" class="headerlink" title="抽象方法:结婚"></a>抽象方法:结婚</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> information <span class="token punctuation">&#123;</span>
+    <span class="token comment">//结婚</span>
+    <span class="token keyword">void</span> <span class="token function">marry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="真实对象：主角"><a href="#真实对象：主角" class="headerlink" title="真实对象：主角"></a>真实对象：主角</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Protagonist</span> <span class="token keyword">implements</span> information<span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">marry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"结婚人进行结婚"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="代理对象：婚庆公司"><a href="#代理对象：婚庆公司" class="headerlink" title="代理对象：婚庆公司"></a>代理对象：婚庆公司</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WeddingCompany</span> <span class="token keyword">implements</span> information<span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Protagonist</span> proxy<span class="token punctuation">;</span>
+    <span class="token comment">//这里我们使用有参构造</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">WeddingCompany</span><span class="token punctuation">(</span><span class="token class-name">Protagonist</span> proxy<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>proxy <span class="token operator">=</span> proxy<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">marry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//代理对象进行业务扩展</span>
+        proxy<span class="token punctuation">.</span><span class="token function">marry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"婚庆公司布置现场"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211127105708547.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211127105708547.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211127105708547"></p>
+<p>================================================================================</p>
+<pre><code> - 一般你需要用你的王者号登陆打排位上分以及领奖励，但是静态代理就是，你把你的号给了一个代练，代练知道你的账号密码然后给你打排位领奖励就是这个意思
+</code></pre>
+<h4 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> information <span class="token punctuation">&#123;</span>
+    <span class="token comment">//登录</span>
+    <span class="token keyword">void</span> <span class="token function">loading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="真实角色"><a href="#真实角色" class="headerlink" title="真实角色"></a>真实角色</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Boss</span> <span class="token keyword">implements</span> information<span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loading</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"老板登录账号密码"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="代理对象"><a href="#代理对象" class="headerlink" title="代理对象"></a>代理对象</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BlackSlaves</span> <span class="token keyword">implements</span> information<span class="token punctuation">&#123;</span>
+    
+    <span class="token keyword">private</span> <span class="token class-name">Boss</span> proxy<span class="token punctuation">;</span>
+    <span class="token comment">//两种方法set和有参</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setProxy</span><span class="token punctuation">(</span><span class="token class-name">Boss</span> proxy<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>proxy <span class="token operator">=</span> proxy<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/*
+    * public BlackSlaves(Boss proxy) &#123;
+    *   this.proxy = proxy;
+    *&#125;
+    *
+    * */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loading</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//代理对象进行业务扩展</span>
+        proxy<span class="token punctuation">.</span><span class="token function">loading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"黑奴打排位领奖励"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>进行测试</p>
+<p><img src="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211127105840398.png" class="lazyload placeholder" data-srcset="https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/image-20211127105840398.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211127105840398"></p>
 <blockquote>
 <p>代理对象可以做很多真实对象做不了的事情<br>真实对象只需要做自己该做的事情就行</p>
 </blockquote>
