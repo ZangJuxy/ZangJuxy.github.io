@@ -366,14 +366,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/27/Python%E7%BB%83%E4%B9%A0%E9%A2%98%20-%20%E5%89%AF%E6%9C%AC%20(9)%20-%20%E5%89%AF%E6%9C%AC/</loc>
+    <loc>http://example.com/2021/11/27/Python%E7%BB%83%E4%B9%A0%E9%A2%98%20-%20%E5%89%AF%E6%9C%AC%20(9)/</loc>
     
     <lastmod>2021-11-27</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/27/Python%E7%BB%83%E4%B9%A0%E9%A2%98%20-%20%E5%89%AF%E6%9C%AC%20(9)/</loc>
+    <loc>http://example.com/2021/11/27/Python%E7%BB%83%E4%B9%A0%E9%A2%98%20-%20%E5%89%AF%E6%9C%AC%20(9)%20-%20%E5%89%AF%E6%9C%AC/</loc>
     
     <lastmod>2021-11-27</lastmod>
     
@@ -1180,6 +1180,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/Python/</loc>
+    <lastmod>2021-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/Nginx/</loc>
     <lastmod>2021-11-30</lastmod>
     <changefreq>daily</changefreq>
@@ -1244,13 +1251,6 @@
   
   <url>
     <loc>http://example.com/tags/SpringMVC/</loc>
-    <lastmod>2021-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Python/</loc>
     <lastmod>2021-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1329,14 +1329,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/java/</loc>
+    <loc>http://example.com/categories/%E5%8F%8D%E5%B0%84/</loc>
     <lastmod>2021-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E5%8F%8D%E5%B0%84/</loc>
+    <loc>http://example.com/categories/java/</loc>
     <lastmod>2021-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
