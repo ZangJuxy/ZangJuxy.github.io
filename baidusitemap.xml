@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2021/12/02/SpringBoot%E6%95%B4%E5%90%88rabbitMq/</loc>
+    <lastmod>2021-12-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2021/12/02/1/</loc>
+    <lastmod>2021-12-02</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2021/08/02/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</loc>
     <lastmod>2021-11-27</lastmod>
   </url>
