@@ -175,7 +175,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #fff;
 }
 .bg-floor {
-  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/34a8e424880511ebb6edd017c2d2eca2.png");
+  background: url("/video/34a8e424880511ebb6edd017c2d2eca2.png");
   background-size: cover;
   transition: all 0.3s;
 }
@@ -1710,7 +1710,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #42b983;
 }
 .bg-light-floor-tags {
-  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/6c0a73257fd74cf99e19e9cac03c64a4.jpg");
+  background: url("/video/6c0a73257fd74cf99e19e9cac03c64a4.jpg");
   background-size: cover;
   background-position: center center;
 }
@@ -1859,7 +1859,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #42b983;
 }
 .bg-light-floor-categories {
-  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/af73ad849c6143b8aaf7f41493544353.jpg");
+  background: url("/video/af73ad849c6143b8aaf7f41493544353.jpg");
   background-size: cover;
   background-position: center center;
 }
@@ -2207,7 +2207,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   box-sizing: border-box;
   transition: all 0.3s;
   position: relative;
-  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/7AF0C9EC92F1DF25431440DB841B5637.jpg");
+  background: url("/video/7AF0C9EC92F1DF25431440DB841B5637.jpg");
 }
 .motto .motto-title {
   text-align: center;
@@ -2449,7 +2449,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   word-break: break-all;
 }
 .bg-light-floor-archive {
-  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/5c23d52f880511ebb6edd017c2d2eca2.jpg");
+  background: url("/video/5c23d52f880511ebb6edd017c2d2eca2.jpg");
   background-size: cover;
   background-position: center center;
 }
@@ -2669,7 +2669,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   line-height: 18px;
 }
 .bg-light-floor-tagDetail {
-  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/wallhaven-g7dwg3.jpg");
+  background: url("/video/wallhaven-g7dwg3.jpg");
   background-size: cover;
   background-position: center center;
 }
@@ -2793,7 +2793,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   border-radius: 10px;
 }
 .bg-light-floor-categoryDetail {
-  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/7d5a3c1679ae42fbbb6d626c0b01f1bb.jpg");
+  background: url("/video/7d5a3c1679ae42fbbb6d626c0b01f1bb.jpg");
   background-size: cover;
   background-position: center center;
 }
@@ -3081,7 +3081,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   }
 }
 .bg-light-floor-about {
-  background: url("https://zzxxxl.oss-cn-beijing.aliyuncs.com/picGo/6e9c64a982ef4a6a926cef400436d7b1.jpg");
+  background: url("/video/6e9c64a982ef4a6a926cef400436d7b1.jpg");
   background-size: cover;
   background-position: center center;
 }
