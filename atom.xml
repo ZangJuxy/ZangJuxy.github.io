@@ -40,27 +40,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://example.com/2021/12/02/1/"/>
-    <id>http://example.com/2021/12/02/1/</id>
-    <published>2021-12-02T04:49:49.495Z</published>
-    <updated>2021-12-02T04:46:20.234Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;SpringBoot整合rabbitMq&quot;&gt;&lt;a href=&quot;#SpringBoot整合rabbitMq&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Thymeleaf表达式</title>
     <link href="http://example.com/2021/11/12/Thymeleaf%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://example.com/2021/11/12/Thymeleaf%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
@@ -525,6 +504,31 @@
         
         
     <summary type="html">&lt;h2 id=&quot;事务回顾&quot;&gt;&lt;a href=&quot;#事务回顾&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SSM" scheme="http://example.com/categories/SSM/"/>
+    
+    
+    <category term="Spring5" scheme="http://example.com/tags/Spring5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>整合Mybatis</title>
+    <link href="http://example.com/2021/09/24/%E6%95%B4%E5%90%88Mybatis/"/>
+    <id>http://example.com/2021/09/24/%E6%95%B4%E5%90%88Mybatis/</id>
+    <published>2021-09-24T02:48:01.000Z</published>
+    <updated>2021-09-25T12:53:21.039Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Spring集成mybatis&quot;&gt;&lt;a href=&quot;#Spring集成mybatis&quot; class=&quot;headerlink&quot; title=&quot;Spring集成mybatis&quot;&gt;&lt;/a&gt;Spring集成mybatis&lt;/h2&gt;&lt;h3 id=&quot;1、创建实体类&quot;&gt;&lt;a</summary>
         
       
     
