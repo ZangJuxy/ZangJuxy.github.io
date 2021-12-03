@@ -711,14 +711,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/MyBatis/</loc>
+    <loc>http://example.com/tags/Linux/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Linux/</loc>
+    <loc>http://example.com/tags/MyBatis/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -746,14 +746,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Nginx/</loc>
+    <loc>http://example.com/tags/MyaBtis/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/MyaBtis/</loc>
+    <loc>http://example.com/tags/Nginx/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -895,14 +895,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E5%8F%8D%E5%B0%84/</loc>
+    <loc>http://example.com/categories/java/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/java/</loc>
+    <loc>http://example.com/categories/%E5%8F%8D%E5%B0%84/</loc>
     <lastmod>2021-12-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
