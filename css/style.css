@@ -175,7 +175,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #fff;
 }
 .bg-floor {
-  background: url("/video/34a8e424880511ebb6edd017c2d2eca2.png");
+  background: url("https://gitee.com/zangblog/img/raw/master/img/$RIVSR19.jpg");
   background-size: cover;
   transition: all 0.3s;
 }
